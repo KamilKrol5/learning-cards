@@ -20,8 +20,18 @@ class LearningSetRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
 
 
 class ItemsListAPIView(ListCreateAPIView):
-    queryset = models.Item.objects.all()
     serializer_class = serializers.ItemSerializer
+
+    def get_queryset(self):
+        queryset = models.Item.objects.all()
+        set_id = self.request.query_params.get('set_id', None)
+        if set_id is None:
+            set_id = self.request.query_params.get('learning_set_id', None)
+        if set_id is None:
+            return queryset
+        else:
+            queryset = queryset.filter(learning_set_id=set_id)
+            return queryset
 
 
 class ItemRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):

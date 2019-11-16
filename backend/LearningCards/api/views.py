@@ -24,9 +24,7 @@ class ItemsListAPIView(ListCreateAPIView):
 
     def get_queryset(self):
         queryset = models.Item.objects.all()
-        set_id = self.request.query_params.get('set_id', None)
-        if set_id is None:
-            set_id = self.request.query_params.get('learning_set_id', None)
+        set_id = self.request.query_params.get('set_id', None) or self.request.query_params.get('learning_set_id', None)
         if set_id is None:
             return queryset
         else:

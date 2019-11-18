@@ -2,13 +2,14 @@
 import React from 'react';
 import {BrowserRouter, Route} from "react-router-dom";
 //components
-import PageWrapper from "./wrappers/PageWrapper";
+import PageWrapper from "./wrappers/pagewrapper/PageWrapper";
 import LoginWrapper from "./wrappers/LoginWrapper";
-import Home from "./pages/Home";
+import Home from "./pages/home/Home";
 import Login from "./pages/Login";
 import ApiTest from "./pages/ApiTest";
 import Register from "./pages/Register";
-import Profile from "./pages/Profile";
+import Dashboard from "./pages/Dashboard";
+import NavBar from "./common/navbar/NavBar";
 
 //other stuff
 
@@ -26,6 +27,7 @@ function App() {
                 render={
                     () => (
                         <PageWrapper>
+                            <NavBar/>
                             <Home/>
                         </PageWrapper>
                     )
@@ -74,7 +76,7 @@ function App() {
                 render={
                     () => (
                         <PageWrapper>
-                            <Profile/>
+                            <Dashboard/>
                         </PageWrapper>
                     )
                 }

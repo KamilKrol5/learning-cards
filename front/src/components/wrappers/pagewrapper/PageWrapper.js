@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import './pagewrapper.css'
 
 class PageWrapper extends Component {
     render() {

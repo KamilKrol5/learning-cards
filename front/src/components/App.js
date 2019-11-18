@@ -8,9 +8,13 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import ApiTest from "./pages/ApiTest";
 import Register from "./pages/Register";
+import Profile from "./pages/Profile";
 
 //other stuff
 
+/**
+ * Główny komponent aplikacji
+ */
 function App() {
     return (
 
@@ -60,6 +64,18 @@ function App() {
                         <LoginWrapper>
                             <Register/>
                         </LoginWrapper>
+                    )
+                }
+            />
+
+            <Route
+                exact={true}
+                path="/profile"
+                render={
+                    () => (
+                        <PageWrapper>
+                            <Profile/>
+                        </PageWrapper>
                     )
                 }
             />

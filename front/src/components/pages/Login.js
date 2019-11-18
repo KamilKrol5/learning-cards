@@ -14,6 +14,9 @@ const fields = [
     {name: 'password', type: 'password', placeholder: 'Password'},
 ];
 
+/**
+ * Komponent zawierający stronę logowania
+ */
 class Login extends Component {
     render() {
         return (

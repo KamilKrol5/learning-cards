@@ -11,7 +11,9 @@ const fields = [
     {name: 'password', type: 'password', placeholder: 'password'},
 ];
 
-
+/**
+ * Strona rejestracji
+ */
 class Register extends Component {
     render() {
         return (

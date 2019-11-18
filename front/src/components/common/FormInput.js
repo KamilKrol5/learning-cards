@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
 
+/**
+ * Komponent zawierający pole na dane wraz z komunikatem o błędzie
+ */
 class FormInput extends Component {
     render() {
         return (

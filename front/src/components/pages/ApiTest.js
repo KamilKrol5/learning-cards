@@ -2,6 +2,9 @@ import React, {Component} from 'react';
 import * as TestUserActions from "../../store/actions/testActions";
 import {connect} from "react-redux";
 
+/**
+ * Komponent do testowania działania API
+ */
 class ApiTest extends Component {
     render() {
         return (

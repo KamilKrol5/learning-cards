@@ -7,6 +7,7 @@ import PageWrapper from "./wrappers/PageWrapper";
 import LoginWrapper from "./wrappers/LoginWrapper";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
+import ApiTest from "./pages/ApiTest";
 
 //other stuff
 
@@ -35,6 +36,17 @@ function App() {
                     <LoginWrapper>
                         <Login />
                     </LoginWrapper>
+                )
+            }
+        />
+        <Route
+            exact={true}
+            path="/apitest"
+            render={
+                () => (
+                    <PageWrapper>
+                        <ApiTest />
+                    </PageWrapper>
                 )
             }
         />

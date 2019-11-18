@@ -5,11 +5,16 @@ const defaultState = {
 
 export const auth = (state = defaultState, action) => {
     // noinspection JSRedundantSwitchStatement
-    switch(action.type) {
+    switch (action.type) {
         case 'LOGIN':
             return {
                 token: 1,
-                userID: 'testUser',
+                userID: 'testUser1',
+            };
+        case 'REGISTER':
+            return {
+                token: 2,
+                userID: 'testUser2'
             };
         default:
             return state;

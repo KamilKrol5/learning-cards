@@ -3,3 +3,10 @@ export const login = (email, pass) => ({
     email,
     pass,
 });
+
+export const register = (username, email, pass) => ({
+    type: 'REGISTER',
+    username,
+    email,
+    pass,
+});

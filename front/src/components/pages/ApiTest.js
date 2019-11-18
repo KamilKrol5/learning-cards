@@ -10,7 +10,8 @@ class ApiTest extends Component {
                 <button onClick={e => {
                     e.preventDefault();
                     this.props.fetchUser();
-                }}>Click me</button>
+                }}>Click me
+                </button>
             </div>
         );
     }
@@ -19,7 +20,7 @@ class ApiTest extends Component {
 
 const mapStateToProps = state => {
     return {
-        randomUser : state.randomUser
+        randomUser: state.randomUser,
     }
 };
 

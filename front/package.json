@@ -5,6 +5,7 @@
   "homepage": "https://kamilkrol5.github.io/learning-cards",
   "dependencies": {
     "axios": "^0.19.0",
+    "bootstrap": "^4.3.1",
     "formik": "^2.0.4",
     "gh-pages": "^2.1.1",
     "react": "^16.11.0",

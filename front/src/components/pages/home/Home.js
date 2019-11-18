@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Link} from "react-router-dom";
+import './home.css';
 
 /**
  * Strona główna aplkacji
@@ -8,8 +8,9 @@ class Home extends Component {
     render() {
         return (
             <div id="home-page">
-                <h1>Home page.</h1>
-                <Link to="/login">Login</Link>
+                <h1>Trzeba coś zrobić z tym tłem bo napierdala po oczach</h1>
+                <h1>cholera wie co</h1>
+                <h1>bla bla bla</h1>
             </div>
         );
     }

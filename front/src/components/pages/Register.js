@@ -1,26 +1,24 @@
-//dependencies
 import React, {Component} from 'react';
-import {withFormik} from "formik";
-import * as Yup from 'yup';
-import {connect} from "react-redux";
-//components
 import FormInput from "../common/FormInput";
-//redux actions
-import * as AuthActions from '../../store/actions/authActions';
-
+import * as AuthActions from "../../store/actions/authActions";
+import {connect} from "react-redux";
+import {withFormik} from "formik";
+import * as Yup from "yup";
 
 const fields = [
+    {name: 'username', type: '', placeholder: 'username'},
     {name: 'email', type: 'email', placeholder: 'e-mail'},
-    {name: 'password', type: 'password', placeholder: 'Password'},
+    {name: 'password', type: 'password', placeholder: 'password'},
 ];
 
-class Login extends Component {
+
+class Register extends Component {
     render() {
         return (
-            <div id="login-page">
+            <div>
                 <form method="post" onSubmit={e => {
                     e.preventDefault();
-                    this.props.login(this.props.values.email, this.props.values.password);
+                    this.props.register(this.props.values.email, this.props.values.password);
                 }}
                 >
                     {fields.map((field, index) => {
@@ -37,7 +35,7 @@ class Login extends Component {
                             />
                         )
                     })}
-                    <button className="btn-submit">Login</button>
+                    <button className="btn-submit">Sign up</button>
                 </form>
             </div>
         );
@@ -52,8 +50,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        login: (email, password) => {
-            dispatch(AuthActions.login(email, password))
+        register: (username, email, password) => {
+            dispatch(AuthActions.register(username, email, password))
         }
     }
 };
@@ -64,14 +62,17 @@ export default connect(
     mapDispatchToProps
 )(withFormik({
     mapPropsToValues: () => ({
+        username: '',
         email: '',
         password: '',
     }),
     validationSchema: Yup.object().shape({
+        username: Yup.string().min(3, "Username too short").required("You need to enter an usename"),
         email: Yup.string().email("Incorrect email.").required("You need to enter an email address."),
         password: Yup.string().min(8, "Password must be at least 8 characters").required("You need to enter a password."),
     }),
     handleSubmit: (values) => {
         console.log("Login attempt: ", values);
     }
-})(Login));
+})(Register));
+

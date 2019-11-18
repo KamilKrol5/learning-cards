@@ -1,5 +1,5 @@
 const randomUserFetched = randomUser => ({
-   type: "RANDOM_USER_FETCHED",
+    type: "RANDOM_USER_FETCHED",
     randomUser
 });
 

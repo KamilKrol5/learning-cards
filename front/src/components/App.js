@@ -2,10 +2,10 @@
 import React from 'react';
 import {BrowserRouter, Route} from "react-router-dom";
 //components
-import PageWrapper from "./wrappers/pagewrapper/PageWrapper";
+import PageWrapper from "./wrappers/PageWrapper";
 import LoginWrapper from "./wrappers/LoginWrapper";
 import Home from "./pages/home/Home";
-import Login from "./pages/Login";
+import Login from "./pages/login/Login";
 import ApiTest from "./pages/ApiTest";
 import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";

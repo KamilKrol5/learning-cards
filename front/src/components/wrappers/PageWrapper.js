@@ -1,10 +1,9 @@
 import React, {Component} from 'react';
-import './pagewrapper.css'
 
 class PageWrapper extends Component {
     render() {
         return (
-            <div id="page-wrapper">
+            <div id="m-page-wrapper" className="m-page-wrapper">
                 {this.props.children}
             </div>
         );

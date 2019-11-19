@@ -1,5 +1,6 @@
-#home-page {
-    background: url("../../../assets/gradient4.png") no-repeat;
+#m-home-page {
+    /*thanks to: https://www.pexels.com/@jeshoots-com-147458*/
+    background: url("../../../assets/pexels-photo-442574.jpeg") no-repeat;
     background-size:cover;
     width: 100%;
     display: flex;
@@ -8,8 +9,21 @@
     align-items: center;
 }
 
-#home-page h1 {
+#m-home-page h1 {
+    margin: 0;
+    padding: 0 15px;
     text-align: center;
     display: block;
     width: 100%;
+}
+
+#m-home-page .m-home-page-btn {
+    color: black;
+    font-size: 15px;
+    text-align: center;
+    padding: 15px 60px;
+    margin: 10px;
+    border: 1px solid black;
+    border-radius: 30px;
+    text-decoration: none;
 }

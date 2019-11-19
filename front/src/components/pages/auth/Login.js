@@ -8,7 +8,7 @@ import FormInput from "../../common/FormInput";
 //redux actions
 import * as AuthActions from '../../../store/actions/authActions';
 //css
-import './login.css';
+import './auth.css';
 import {Link} from "react-router-dom";
 
 const fields = [
@@ -22,12 +22,12 @@ const fields = [
 class Login extends Component {
     render() {
         return (
-            <div id="m-login-page">
-                <div className="m-login-page-bg">
-                    <Link to="/" className="m-login-page-logo">LearningCards</Link>
+            <div id="m-auth-page">
+                <div className="m-auth-page-bg">
+                    <Link to="/" className="m-auth-page-logo">LearningCards</Link>
                 </div>
-                <div className="m-login-page-form-wrapper">
-                    <form className="m-login-page-form" method="post" onSubmit={e => {
+                <div className="m-auth-page-form-wrapper">
+                    <form className="m-auth-page-form" method="post" onSubmit={e => {
                         e.preventDefault();
                         this.props.login(this.props.values.email, this.props.values.password);
                     }}

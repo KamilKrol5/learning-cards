@@ -1,11 +1,11 @@
-#m-login-page {
+#m-auth-page {
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
 }
 
-.m-login-page-logo {
+.m-auth-page-logo {
     display: inline-block;
     margin: 0;
     color: white;
@@ -14,7 +14,7 @@
     max-height: 80px;
 }
 
-.m-login-page-bg {
+.m-auth-page-bg {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -23,7 +23,7 @@
     background: url("../../../assets/color-2174065.png");
 }
 
-.m-login-page-form-wrapper {
+.m-auth-page-form-wrapper {
     width: 100%;
     height: 90%;
     display: flex;
@@ -31,7 +31,7 @@
     justify-content: center;
 }
 
-.m-login-page-form {
+.m-auth-page-form {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -80,22 +80,22 @@
 }
 
 @media screen and (min-width: 600px) {
-    #m-login-page {
+    #m-auth-page {
         flex-direction: row;
     }
 
-    .m-login-page-bg {
+    .m-auth-page-bg {
         align-items: unset;
         width: 30%;
         height: 100%;
     }
 
-    .m-login-page-form-wrapper {
+    .m-auth-page-form-wrapper {
         height: 100%;
         width: 70%;
     }
 
-    .m-login-page-logo {
+    .m-auth-page-logo {
         margin-top: 15px;
         font-size: 24px;
     }
@@ -119,7 +119,7 @@
         padding: 15px 95px;
     }
 
-    .m-login-page-logo {
+    .m-auth-page-logo {
         margin-top: 15px;
         font-size: 32px;
     }

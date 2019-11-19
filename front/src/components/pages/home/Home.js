@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './home.css';
+import {Link} from "react-router-dom";
 
 /**
  * Strona główna aplkacji
@@ -7,10 +8,11 @@ import './home.css';
 class Home extends Component {
     render() {
         return (
-            <div id="home-page">
-                <h1>Trzeba coś zrobić z tym tłem bo napierdala po oczach</h1>
+            <div id="m-home-page">
+                <h1>Trzeba coś zrobić z tym tłem bo daje po oczach</h1>
                 <h1>cholera wie co</h1>
                 <h1>bla bla bla</h1>
+                <Link className="m-home-page-btn" to={"/signup"}>Begin</Link>
             </div>
         );
     }

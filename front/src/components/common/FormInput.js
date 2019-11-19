@@ -6,9 +6,9 @@ import React, {Component} from 'react';
 class FormInput extends Component {
     render() {
         return (
-            <div className="form-group">
+            <div className="m-form-input-group">
                 <input
-                    className="form-input"
+                    className="m-form-input-input"
                     id={this.props.name + this.props.keyv}
                     type={this.props.type}
                     placeholder={this.props.placeholder}
@@ -17,7 +17,7 @@ class FormInput extends Component {
                     onChange={this.props.onChange}
                     onBlur={this.props.onBlur}
                 />
-                <p className="form-group-error">
+                <p className="m-form-input-error">
                     {(this.props.touched && this.props.errors) && <span>{this.props.errors}</span>}
                 </p>
             </div>

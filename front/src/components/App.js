@@ -5,9 +5,9 @@ import {BrowserRouter, Route} from "react-router-dom";
 import PageWrapper from "./wrappers/PageWrapper";
 import LoginWrapper from "./wrappers/LoginWrapper";
 import Home from "./pages/home/Home";
-import Login from "./pages/login/Login";
+import Login from "./pages/auth/Login";
 import ApiTest from "./pages/ApiTest";
-import Register from "./pages/Register";
+import Register from "./pages/auth/Register";
 import Dashboard from "./pages/Dashboard";
 import NavBar from "./common/navbar/NavBar";
 

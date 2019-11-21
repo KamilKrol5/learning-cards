@@ -12,7 +12,7 @@ import './auth.css';
 import {Link} from "react-router-dom";
 
 const fields = [
-    {name: 'email', type: 'email', placeholder: 'e-mail'},
+    {name: 'username', type: '', placeholder: 'username'},
     {name: 'password', type: 'password', placeholder: 'password'},
 ];
 
@@ -29,7 +29,7 @@ class Login extends Component {
                 <div className="m-auth-page-form-wrapper">
                     <form className="m-auth-page-form" method="post" onSubmit={e => {
                         e.preventDefault();
-                        this.props.login(this.props.values.email, this.props.values.password);
+                        this.props.loginAPIcall(this.props.values.username, this.props.values.password);
                     }}
                     >
                         {fields.map((field, index) => {
@@ -61,11 +61,14 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => {
-    return {
+    return ({
         login: (email, password) => {
             dispatch(AuthActions.login(email, password))
-        }
-    }
+        },
+        loginAPIcall: (email, password) => {
+            dispatch(AuthActions.loginAPIcall(email, password))
+        },
+    })
 };
 
 
@@ -74,11 +77,11 @@ export default connect(
     mapDispatchToProps
 )(withFormik({
     mapPropsToValues: () => ({
-        email: '',
+        username: '',
         password: '',
     }),
     validationSchema: Yup.object().shape({
-        email: Yup.string().email("Incorrect email.").required("You need to enter an email address."),
+        username: Yup.string().required("You need to enter an username."),
         password: Yup.string().min(8, "Password must be at least 8 characters").required("You need to enter a password."),
     }),
     handleSubmit: (values) => {

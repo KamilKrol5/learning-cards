@@ -1,6 +1,19 @@
-from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView, ListAPIView
+from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView, CreateAPIView
 from LearningCards import models
 from . import serializers
+from rest_framework import status
+from django.contrib.auth import get_user_model
+
+
+class RegisterAPIView(CreateAPIView):
+    serializer_class = serializers.UserSerializer
+    model = get_user_model()
+
+    def create(self, request, *args, **kwargs):
+        response = super(RegisterAPIView, self).create(request, *args, **kwargs)
+        response.status = status.HTTP_200_OK
+        response.data = {'User created'}
+        return response
 
 
 class LearningSetsListAPIView(ListCreateAPIView):

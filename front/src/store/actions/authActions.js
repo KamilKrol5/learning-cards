@@ -23,7 +23,7 @@ export const loginAPIcall = (username, pass) => (dispatch) => {
         })
         .catch(error => {
             console.log(`DEBUG: Login error, response: ${JSON.stringify(error)}`);
-            dispatch(loginError(error.toString()));
+            dispatch(loginError(error.response.data.detail.toString()));
         });
 };
 

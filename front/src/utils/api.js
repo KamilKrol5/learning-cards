@@ -1,13 +1,21 @@
 import axios from 'axios'
 
-const host = "http://192.168.137.1:8000";
+const rootURL = "http://206.81.21.127:8000";
+const apiServer = axios.create();
+apiServer.defaults.timeout = 3000;
+apiServer.defaults.baseURL = rootURL;
 
 const API = {
     login: (username, password) => {
-        return axios.post(`${host}/api/token/`, {
-            username: username,
-            password: password,
-        }).then(console.log)
+        return apiServer({
+            url: "/api/token/",
+            method: "post",
+            data: {
+                username,
+                password,
+            },
+            timeout: 1000 * 5,
+        })
     }
 };
 

@@ -12,7 +12,7 @@ import './auth.css';
 import {Link} from "react-router-dom";
 
 const fields = [
-    {name: 'username', type: '', placeholder: 'username'},
+    {name: 'username', type: 'text', placeholder: 'username'},
     {name: 'password', type: 'password', placeholder: 'password'},
 ];
 
@@ -20,6 +20,11 @@ const fields = [
  * Komponent zawierający stronę logowania
  */
 class Login extends Component {
+
+    componentDidMount() {
+        this.props.resetErrorMessage()
+    }
+
     render() {
         return (
             <div id="m-auth-page">
@@ -27,6 +32,12 @@ class Login extends Component {
                     <Link to="/" className="m-auth-page-logo">LearningCards</Link>
                 </div>
                 <div className="m-auth-page-form-wrapper">
+                    <div
+                        style={{height: this.props.auth.loginErrorMessage && "45px"}}
+                        className="m-auth-page-login-error"
+                    >
+                        <p className="m-auth-page-login-error-p">{this.props.auth.loginErrorMessage}</p>
+                    </div>
                     <form className="m-auth-page-form" method="post" onSubmit={e => {
                         e.preventDefault();
                         this.props.loginAPIcall(this.props.values.username, this.props.values.password);
@@ -56,18 +67,18 @@ class Login extends Component {
 
 const mapStateToProps = state => {
     return {
-        auth: state.auth
+        auth: state.auth,
     }
 };
 
 const mapDispatchToProps = dispatch => {
     return ({
-        login: (email, password) => {
-            dispatch(AuthActions.login(email, password))
-        },
         loginAPIcall: (email, password) => {
             dispatch(AuthActions.loginAPIcall(email, password))
         },
+        resetErrorMessage: () => {
+            dispatch(AuthActions.resetErrorMessage())
+        }
     })
 };
 

@@ -1,34 +1,32 @@
-/**
- * Akcja odpowiedzialna za logowanie
- * @param email email
- * @param pass hasło
- * @returns {{pass: *, type: string, email: *}} obiekt przekazywany do reducera
- */
 import API from '../../utils/api'
 
-export const login = (email, pass) => ({
-    type: 'LOGIN',
-    email,
-    pass,
+export const loginSuccessful = (refreshToken, accessToken) => ({
+    type: 'LOGIN_SUCCESSFUL',
+    refreshToken,
+    accessToken,
+});
+
+export const loginError = (errorContent) => ({
+    type: 'LOGIN_ERROR',
+    errorContent,
+});
+
+export const resetErrorMessage = () => ({
+    type: 'RESET_ERROR_MESSAGE',
 });
 
 export const loginAPIcall = (username, pass) => (dispatch) => {
     API.login(username, pass)
-        .then(data => {
-            console.log(JSON.stringify(data));
-            dispatch(login("dupa", "dupa"));
+        .then(response => {
+            console.log(`DEBUG: Login successful, response: ${JSON.stringify(response)}`);
+            dispatch(loginSuccessful(response.data.refresh, response.data.access))
         })
+        .catch(error => {
+            console.log(`DEBUG: Login error, response: ${JSON.stringify(error)}`);
+            dispatch(loginError(error.toString()));
+        });
 };
 
-
-
-/**
- * Akcja odpowiedzialna za rejestrację
- * @param username nazwa użytkownika
- * @param email
- * @param pass hasło
- * @returns {{pass: *, type: string, email: *, username: *}} obiekt przekazywany do reducera
- */
 export const register = (username, email, pass) => ({
     type: 'REGISTER',
     username,

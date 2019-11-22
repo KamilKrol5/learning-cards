@@ -4,8 +4,6 @@ from datetime import timedelta
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '2zq7pv)n((xmx)i$$t-5vx0j@fnx43z2i07!(_)nb=fld*p(&2'
@@ -13,7 +11,7 @@ SECRET_KEY = '2zq7pv)n((xmx)i$$t-5vx0j@fnx43z2i07!(_)nb=fld*p(&2'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.137.1', 'localhost', '206.81.21.127']
+ALLOWED_HOSTS = ['127.0.0.1', '192.168.137.1', 'localhost', '206.81.21.127']
 
 # Application definition
 

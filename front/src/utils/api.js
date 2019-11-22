@@ -14,7 +14,7 @@ const API = {
                 username,
                 password,
             },
-            timeout: 1000 * 5,
+            timeout: 1000 * 2,
         })
     }
 };

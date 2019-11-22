@@ -9,14 +9,16 @@
     width: 17%;
 }
 #createSet{
+    border-radius: 20px;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
-    margin-top: 4rem;
-    margin-left: 27rem;
+    margin-top: 4%;
+    margin-left: 27%;
 }
 #reviewSets{
+    border-radius: 20px;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
-    margin-top: 6rem;
-    margin-left: 27rem;
+    margin-top: 6%;
+    margin-left: 27%;
     height: fit-content;
     min-height: 15vh;
 }

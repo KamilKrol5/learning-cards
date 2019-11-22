@@ -11,7 +11,6 @@ import Register from "./pages/auth/Register";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import NavBar from "./common/navbar/NavBar";
 import NavBarUser from "./common/navbar/NavBarUser";
-import SetPage from "./pages/SetPage/SetPage";
 
 //other stuff
 

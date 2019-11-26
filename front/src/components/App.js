@@ -10,6 +10,8 @@ import ApiTest from "./pages/ApiTest";
 import Register from "./pages/auth/Register";
 import Dashboard from "./pages/Dashboard";
 import NavBar from "./common/navbar/NavBar";
+import Mode1 from "./common/Mode1";
+import FlipCard from "./common/flipcard/FlipCard";
 
 //other stuff
 
@@ -77,6 +79,33 @@ function App() {
                     () => (
                         <PageWrapper>
                             <Dashboard/>
+                        </PageWrapper>
+                    )
+                }
+            />
+
+            <Route
+                exact={true}
+                path="/mode1"
+                render={
+                    () => (
+                        <PageWrapper>
+                            <Mode1/>
+                        </PageWrapper>
+                    )
+                }
+            />
+
+            <Route
+                exact={true}
+                path="/flipcard"
+                render={
+                    () => (
+                        <PageWrapper>
+                            <FlipCard
+                                term={"term"}
+                                definition={"definition"}
+                            />
                         </PageWrapper>
                     )
                 }

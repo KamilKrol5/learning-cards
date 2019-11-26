@@ -2,6 +2,9 @@ import React, {Component} from 'react';
 import {Link} from "react-router-dom";
 import './navbar.css'
 
+/**
+ * Główny navbar
+ */
 class NavBar extends Component {
     render() {
         return (
@@ -12,6 +15,8 @@ class NavBar extends Component {
                 <div className="m-nav-right">
                     <Link className="m-nav-btn m-nav-link" to="/login">Login</Link>
                     <Link className="m-nav-btn m-nav-link" to="/signup">Register</Link>
+                    <Link className="m-nav-btn m-nav-link" to="/mode1">Mode 1 (in dev)</Link>
+                    <Link className="m-nav-btn m-nav-link" to="/flipcard">FlipCard (in dev)</Link>
                 </div>
             </nav>
         );

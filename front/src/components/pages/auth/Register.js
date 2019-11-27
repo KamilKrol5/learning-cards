@@ -11,12 +11,18 @@ const fields = [
     {name: 'username', type: '', placeholder: 'username'},
     {name: 'email', type: 'email', placeholder: 'e-mail'},
     {name: 'password', type: 'password', placeholder: 'password'},
+    {name: 'passwordOnceAgain', type: 'password', placeholder: 'confirm password'}
 ];
 
 /**
  * Strona rejestracji
  */
 class Register extends Component {
+
+    componentDidMount() {
+        this.props.resetErrorMessage()
+    }
+
     render() {
         return (
             <div id="m-auth-page">
@@ -24,9 +30,16 @@ class Register extends Component {
                     <Link to="/" className="m-auth-page-logo">LearningCards</Link>
                 </div>
                 <div className="m-auth-page-form-wrapper">
+                    <div
+                        style={{height: this.props.auth.registerErrorMessage && "45px"}}
+                        className="m-auth-page-login-error"
+                    >
+                        <p className="m-auth-page-login-error-p">{this.props.auth.registerErrorMessage}</p>
+                    </div>
                     <form className="m-auth-page-form" method="post" onSubmit={e => {
+                        this.props.resetErrorMessage();
                         e.preventDefault();
-                        this.props.register(this.props.values.email, this.props.values.password);
+                        this.props.register(this.props.values.username, this.props.values.email, this.props.values.password);
                     }}
                     >
                         {fields.map((field, index) => {
@@ -61,10 +74,12 @@ const mapDispatchToProps = dispatch => {
     return {
         register: (username, email, password) => {
             dispatch(AuthActions.register(username, email, password))
+        },
+        resetErrorMessage: () => {
+            dispatch(AuthActions.resetErrorMessage())
         }
     }
 };
-
 
 export default connect(
     mapStateToProps,
@@ -74,11 +89,15 @@ export default connect(
         username: '',
         email: '',
         password: '',
+        passwordOnceAgain: '',
     }),
     validationSchema: Yup.object().shape({
         username: Yup.string().min(3, "Username too short").required("You need to enter an usename"),
         email: Yup.string().email("Incorrect email.").required("You need to enter an email address."),
         password: Yup.string().min(8, "Password must be at least 8 characters").required("You need to enter a password."),
+        passwordOnceAgain: Yup.string()
+            .oneOf([Yup.ref('password'), null], 'Passwords does not match.')
+            .required('Password confirm is required'),
     }),
     handleSubmit: (values) => {
         console.log("Login attempt: ", values);

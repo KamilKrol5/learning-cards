@@ -1,0 +1,80 @@
+.m-mode-1 {
+    /*for dev purposes only*/
+    width: 900px;
+    height: 600px;
+    background-color: #eee;
+    /*normally*/
+    /*width: 100%;*/
+
+    /*height: 100%;*/
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.m-mode-1-header {
+    background-color: #bbe;
+    height: 20%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.m-mode-1-header-title {
+    font-size: 35px;
+}
+
+
+
+.m-mode-1-main {
+    background-color: #beb;
+    height: 60%;
+    width: 100%;
+    display: flex;
+}
+
+.m-mode-1-card-wrapper {
+    height: 80%;
+    width: 80%;
+}
+
+
+.m-mode-1-main-left {
+    background-color: #a5d7a5;
+    height: 100%;
+    width: 20%;
+}
+
+.m-mode-1-main-right {
+    background-color: #A5D7A5;
+    height: 100%;
+    width: 20%;
+}
+
+.m-mode-1-main-left, .m-mode-1-main-right, .m-mode-1-main-middle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.m-mode-1-main-arrow {
+    padding: 5px;
+}
+
+
+.m-mode-1-main-middle {
+    background-color: #beb;
+    height: 100%;
+    width: 60%;
+
+
+}
+
+
+
+.m-mode-1-footer {
+    background-color: #ebb;
+    height: 20%;
+    width: 100%;
+}

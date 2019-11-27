@@ -2,7 +2,7 @@
 import React from 'react';
 import {BrowserRouter, Route} from "react-router-dom";
 //components
-import PageWrapper from "./wrappers/PageWrapper";
+import PageFlexWrapper from "./wrappers/pagewrapper/PageFlexWrapper";
 import LoginWrapper from "./wrappers/LoginWrapper";
 import Home from "./pages/home/Home";
 import Login from "./pages/auth/Login";
@@ -10,7 +10,7 @@ import ApiTest from "./pages/ApiTest";
 import Register from "./pages/auth/Register";
 import Dashboard from "./pages/Dashboard";
 import NavBar from "./common/navbar/NavBar";
-import Mode1 from "./common/Mode1";
+import Mode1 from "./common/mode1/Mode1";
 import FlipCard from "./common/flipcard/FlipCard";
 import Card from "./common/card/Card";
 
@@ -29,10 +29,10 @@ function App() {
                 path="/"
                 render={
                     () => (
-                        <PageWrapper>
+                        <PageFlexWrapper>
                             <NavBar/>
                             <Home/>
-                        </PageWrapper>
+                        </PageFlexWrapper>
                     )
                 }
             />
@@ -54,9 +54,9 @@ function App() {
                 path="/apitest"
                 render={
                     () => (
-                        <PageWrapper>
+                        <PageFlexWrapper>
                             <ApiTest/>
-                        </PageWrapper>
+                        </PageFlexWrapper>
                     )
                 }
             />
@@ -78,9 +78,9 @@ function App() {
                 path="/profile"
                 render={
                     () => (
-                        <PageWrapper>
+                        <PageFlexWrapper>
                             <Dashboard/>
-                        </PageWrapper>
+                        </PageFlexWrapper>
                     )
                 }
             />
@@ -90,9 +90,11 @@ function App() {
                 path="/mode1"
                 render={
                     () => (
-                        <PageWrapper>
-                            <Mode1/>
-                        </PageWrapper>
+                        <PageFlexWrapper>
+                            <Mode1
+                                setName={"in dev"}
+                            />
+                        </PageFlexWrapper>
                     )
                 }
             />
@@ -102,12 +104,14 @@ function App() {
                 path="/flipcard"
                 render={
                     () => (
-                        <PageWrapper>
+                        <PageFlexWrapper>
                             <FlipCard
+                                width={"400px"}
+                                height={"250px"}
                                 term={"term"}
                                 definition={"definition"}
                             />
-                        </PageWrapper>
+                        </PageFlexWrapper>
                     )
                 }
             />
@@ -118,12 +122,14 @@ function App() {
                 path="/card"
                 render={
                     () => (
-                        <PageWrapper>
+                        <PageFlexWrapper>
                             <Card
+                                width={"400px"}
+                                height={"250px"}
                                 term={"term"}
                                 definition={"definition"}
                             />
-                        </PageWrapper>
+                        </PageFlexWrapper>
                     )
                 }
             />

@@ -24,7 +24,15 @@ export const auth = (state = defaultState, action) => {
                 refreshToken: state.refreshToken,
                 accessToken: state.accessToken,
                 loginErrorMessage: null,
+                registerErrorMessage: null,
             };
+        case 'REGISTER_ERROR':
+            return {
+                registerErrorMessage: action.errorMessage,
+            };
+        case 'REGISTER_SUCCESSFUL':
+            //TO DO
+            return state;
         default:
             return state;
     }

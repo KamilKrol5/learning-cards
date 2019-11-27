@@ -17,6 +17,7 @@ class NavBar extends Component {
                     <Link className="m-nav-btn m-nav-link" to="/signup">Register</Link>
                     <Link className="m-nav-btn m-nav-link" to="/mode1">Mode 1 (in dev)</Link>
                     <Link className="m-nav-btn m-nav-link" to="/flipcard">FlipCard (in dev)</Link>
+                    <Link className="m-nav-btn m-nav-link" to="/card">Card (in dev)</Link>
                 </div>
             </nav>
         );

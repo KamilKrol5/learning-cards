@@ -12,6 +12,7 @@ import Dashboard from "./pages/Dashboard";
 import NavBar from "./common/navbar/NavBar";
 import Mode1 from "./common/Mode1";
 import FlipCard from "./common/flipcard/FlipCard";
+import Card from "./common/card/Card";
 
 //other stuff
 
@@ -103,6 +104,22 @@ function App() {
                     () => (
                         <PageWrapper>
                             <FlipCard
+                                term={"term"}
+                                definition={"definition"}
+                            />
+                        </PageWrapper>
+                    )
+                }
+            />
+
+
+            <Route
+                exact={true}
+                path="/card"
+                render={
+                    () => (
+                        <PageWrapper>
+                            <Card
                                 term={"term"}
                                 definition={"definition"}
                             />

@@ -3,7 +3,7 @@ import React from 'react';
 import {BrowserRouter, Route} from "react-router-dom";
 //components
 import PageFlexWrapper from "./wrappers/pagewrapper/PageFlexWrapper";
-import LoginWrapper from "./wrappers/LoginWrapper";
+import LoginWrapper from "./wrappers/pagewrapper/LoginWrapper";
 import Home from "./pages/home/Home";
 import Login from "./pages/auth/Login";
 import ApiTest from "./pages/ApiTest";
@@ -92,7 +92,7 @@ function App() {
                     () => (
                         <PageFlexWrapper>
                             <Mode1
-                                setName={"in dev"}
+                                setName={"Moje słówka"}
                             />
                         </PageFlexWrapper>
                     )

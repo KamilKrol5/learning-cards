@@ -21,8 +21,8 @@ export const registerError = (errorMessage) => ({
     errorMessage,
 });
 
-export const resetErrorMessage = () => ({
-    type: 'RESET_ERROR_MESSAGE',
+export const resetState = () => ({
+    type: 'RESET_STATE',
 });
 
 export const loginAPIcall = (username, pass) => (dispatch) => {

@@ -20,45 +20,72 @@ const fields = [
 class Register extends Component {
 
     componentDidMount() {
-        this.props.resetErrorMessage()
+        this.props.resetState()
     }
 
     render() {
+
+        const registerPage = <div className="m-auth-page-form-wrapper">
+            <div
+                style={{height: this.props.auth.registerErrorMessage && "45px"}}
+                className="m-auth-page-login-error"
+            >
+                <p className="m-auth-page-login-error-p">{this.props.auth.registerErrorMessage}</p>
+            </div>
+            <form className="m-auth-page-form" method="post" onSubmit={e => {
+                this.props.resetState();
+                e.preventDefault();
+                this.props.register(this.props.values.username, this.props.values.email, this.props.values.password);
+            }}
+            >
+                {fields.map((field, index) => {
+                    return (
+                        <FormInput
+                            {...field}
+                            key={index}
+                            keyv={index}
+                            value={this.props.values[field.name]}
+                            touched={this.props.touched[field.name]}
+                            errors={this.props.errors[field.name]}
+                            onChange={this.props.handleChange}
+                            onBlur={this.props.handleBlur}
+                        />
+                    )
+                })}
+                <button className="m-form-btn-submit">Sign up</button>
+            </form>
+        </div>;
+
+
+        const registerSuccessfulPage = <div className="m-auth-page-form-wrapper">
+            <div className="m-auth-page-reg-ok">
+                <div className="m-auth-page-reg-ok-msg">
+                    <svg className="m-auth-page-reg-ok-msg-img"
+                         xmlns="http://www.w3.org/2000/svg"
+                         viewBox="0 0 24 24"
+                    >
+                        <path fill="none" d="M0 0h24v24H0z"/>
+                        <path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/>
+                    </svg>
+                    <p className="m-auth-page-reg-ok-msg-p">
+                        You have successfully signed up!
+                    </p>
+                </div>
+                <div className="m-auth-page-reg-ok-lnk">
+                    <Link className="m-nav-btn m-nav-link" to="/login">Login</Link>
+                </div>
+            </div>
+        </div>;
+
+
         return (
             <div id="m-auth-page">
                 <div className="m-auth-page-bg">
                     <Link to="/" className="m-auth-page-logo">LearningCards</Link>
                 </div>
-                <div className="m-auth-page-form-wrapper">
-                    <div
-                        style={{height: this.props.auth.registerErrorMessage && "45px"}}
-                        className="m-auth-page-login-error"
-                    >
-                        <p className="m-auth-page-login-error-p">{this.props.auth.registerErrorMessage}</p>
-                    </div>
-                    <form className="m-auth-page-form" method="post" onSubmit={e => {
-                        this.props.resetErrorMessage();
-                        e.preventDefault();
-                        this.props.register(this.props.values.username, this.props.values.email, this.props.values.password);
-                    }}
-                    >
-                        {fields.map((field, index) => {
-                            return (
-                                <FormInput
-                                    {...field}
-                                    key={index}
-                                    keyv={index}
-                                    value={this.props.values[field.name]}
-                                    touched={this.props.touched[field.name]}
-                                    errors={this.props.errors[field.name]}
-                                    onChange={this.props.handleChange}
-                                    onBlur={this.props.handleBlur}
-                                />
-                            )
-                        })}
-                        <button className="m-form-btn-submit">Sign up</button>
-                    </form>
-                </div>
+                {
+                    this.props.auth.registerSuccessful ? registerSuccessfulPage : registerPage
+                }
             </div>
         );
     }
@@ -75,8 +102,8 @@ const mapDispatchToProps = dispatch => {
         register: (username, email, password) => {
             dispatch(AuthActions.register(username, email, password))
         },
-        resetErrorMessage: () => {
-            dispatch(AuthActions.resetErrorMessage())
+        resetState: () => {
+            dispatch(AuthActions.resetState())
         }
     }
 };

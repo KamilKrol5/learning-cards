@@ -50,6 +50,28 @@
     font-size: 20px;
 }
 
+.m-auth-page-reg-ok {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.m-auth-page-reg-ok-msg {
+    display: flex;
+    align-items: center;
+}
+
+.m-auth-page-reg-ok-msg-img {
+    margin: 0 10px;
+    width: 35px;
+    height: 35px;
+}
+
+.m-auth-page-reg-ok-msg-p {
+    font-size: 20px;
+    margin: 15px;
+}
+
 .m-auth-page-form {
     display: flex;
     align-items: center;

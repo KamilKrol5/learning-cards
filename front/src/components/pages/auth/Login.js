@@ -22,7 +22,7 @@ const fields = [
 class Login extends Component {
 
     componentDidMount() {
-        this.props.resetErrorMessage()
+        this.props.resetState()
     }
 
     render() {
@@ -76,8 +76,8 @@ const mapDispatchToProps = dispatch => {
         loginAPIcall: (email, password) => {
             dispatch(AuthActions.loginAPIcall(email, password))
         },
-        resetErrorMessage: () => {
-            dispatch(AuthActions.resetErrorMessage())
+        resetState: () => {
+            dispatch(AuthActions.resetState())
         }
     })
 };

@@ -36,3 +36,8 @@
     margin-top:20%;
     font-size: 15px;
 }
+@media (max-width: 767px){
+    #navDiv{
+        min-width: 4rem;
+    }
+}

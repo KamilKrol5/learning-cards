@@ -1,0 +1,85 @@
+.m-mode-1 {
+    /*for dev purposes only*/
+    /*width: 900px;*/
+    /*height: 600px;*/
+
+    /*normally*/
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.m-mode-1-header {
+    height: 20%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.m-mode-1-header-title {
+    font-size: 35px;
+}
+
+
+
+.m-mode-1-main {
+    height: 70%;
+    width: 100%;
+    display: flex;
+}
+
+.m-mode-1-card-wrapper {
+    height: 80%;
+    width: 80%;
+}
+
+
+.m-mode-1-main-left, .m-mode-1-main-right {
+    height: 100%;
+    width: 20%;
+    transition: background-color .15s;
+}
+
+.m-mode-1-main-left:hover, .m-mode-1-main-right:hover {
+}
+
+
+.m-mode-1-main-left, .m-mode-1-main-right, .m-mode-1-main-middle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.m-mode-1-main-arrow {
+    padding: 10px;
+    border-radius: 100%;
+    transition: background-color .3s;
+}
+
+.m-mode-1-main-arrow:hover {
+    background-color: #cecece;
+}
+
+
+.m-mode-1-main-middle {
+    height: 100%;
+    width: 60%;
+}
+
+
+
+.m-mode-1-footer {
+    height: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.m-mode-1-footer-ctr {
+    font-size: 20px;
+}

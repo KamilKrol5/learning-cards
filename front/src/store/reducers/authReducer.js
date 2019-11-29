@@ -1,27 +1,38 @@
 const defaultState = {
-    token: null,
-    userID: null,
+    refreshToken: null,
+    accessToken: null,
+    loginErrorMessage: null,
 };
 
-/**
- * Reducer obsługujący zmianę stanu auth po rejestracji i logowaniu
- * @param state poprzedni stan
- * @param action akcja
- * @returns {{userID: null, token: null}|{userID: string, token: number}} nowy stan
- */
 export const auth = (state = defaultState, action) => {
     // noinspection JSRedundantSwitchStatement
     switch (action.type) {
-        case 'LOGIN':
+        case 'LOGIN_SUCCESSFUL':
             return {
-                token: 1,
-                userID: 'testUser1',
+                refreshToken: action.refreshToken,
+                accessToken: action.accessToken,
+                loginErrorMessage: null,
             };
-        case 'REGISTER':
+        case 'LOGIN_ERROR':
             return {
-                token: 2,
-                userID: 'testUser2'
+                refreshToken: null,
+                accessToken: null,
+                loginErrorMessage: action.errorContent,
             };
+        case 'RESET_ERROR_MESSAGE':
+            return {
+                refreshToken: state.refreshToken,
+                accessToken: state.accessToken,
+                loginErrorMessage: null,
+                registerErrorMessage: null,
+            };
+        case 'REGISTER_ERROR':
+            return {
+                registerErrorMessage: action.errorMessage,
+            };
+        case 'REGISTER_SUCCESSFUL':
+            //TO DO
+            return state;
         default:
             return state;
     }

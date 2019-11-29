@@ -26,10 +26,10 @@ class Dashboard extends Component {
         // const {userSets} = this.state;
         return (
             <div id="main-div">
-                <div id="navdiv">
+                <div id="navDiv">
                     <NavBarUser></NavBarUser>
                 </div>
-                <div  className="flex-column w-100" id="dashDiv">
+                <div  id="dashDiv">
                     <div className="bg-light" id="createSet">
 
                         <form onSubmit={(e) => {this.addState(e)}}>

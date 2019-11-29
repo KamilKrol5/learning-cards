@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import './pageflexwrapper.css'
 
 class LoginWrapper extends Component {
     render() {

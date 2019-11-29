@@ -2,15 +2,18 @@
 import React from 'react';
 import {BrowserRouter, Route} from "react-router-dom";
 //components
-import PageWrapper from "./wrappers/PageWrapper";
-import LoginWrapper from "./wrappers/LoginWrapper";
+import PageFlexWrapper from "./wrappers/pagewrapper/PageFlexWrapper";
+import LoginWrapper from "./wrappers/pagewrapper/LoginWrapper";
 import Home from "./pages/home/Home";
 import Login from "./pages/auth/Login";
 import ApiTest from "./pages/ApiTest";
 import Register from "./pages/auth/Register";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import NavBar from "./common/navbar/NavBar";
-import NavBarUser from "./common/navbar/NavBarUser";
+import Mode1 from "./common/mode1/Mode1";
+import FlipCard from "./common/flipcard/FlipCard";
+import Card from "./common/card/Card";
+import Mode2 from "./common/mode2/Mode2";
 
 //other stuff
 
@@ -27,9 +30,10 @@ function App() {
                 path="/"
                 render={
                     () => (
-                        <PageWrapper>
-                            <Dashboard></Dashboard>
-                        </PageWrapper>
+                        <PageFlexWrapper>
+                            <NavBar/>
+                            <Home/>
+                        </PageFlexWrapper>
                     )
                 }
             />
@@ -51,9 +55,9 @@ function App() {
                 path="/apitest"
                 render={
                     () => (
-                        <PageWrapper>
+                        <PageFlexWrapper>
                             <ApiTest/>
-                        </PageWrapper>
+                        </PageFlexWrapper>
                     )
                 }
             />
@@ -75,9 +79,81 @@ function App() {
                 path="/profile"
                 render={
                     () => (
-                        <PageWrapper>
+                        <PageFlexWrapper>
                             <Dashboard/>
-                        </PageWrapper>
+                        </PageFlexWrapper>
+                    )
+                }
+            />
+
+            <Route
+                exact={true}
+                path="/mode1"
+                render={
+                    () => (
+                        <PageFlexWrapper>
+                            <Mode1
+                            />
+                        </PageFlexWrapper>
+                    )
+                }
+            />
+            <Route
+                exact={true}
+                path="/mode2"
+                render={
+                    () => (
+                        <PageFlexWrapper>
+                            <Mode2
+                            />
+                        </PageFlexWrapper>
+                    )
+                }
+            />
+
+            <Route
+                exact={true}
+                path="/flipcard"
+                render={
+                    () => (
+                        <PageFlexWrapper>
+                            <FlipCard
+                                width={"400px"}
+                                height={"250px"}
+                                term={"term"}
+                                definition={"definition"}
+                            />
+                        </PageFlexWrapper>
+                    )
+                }
+            />
+
+
+            <Route
+                exact={true}
+                path="/card"
+                render={
+                    () => (
+                        <PageFlexWrapper>
+                            <Card
+                                width={"400px"}
+                                height={"250px"}
+                                term={"term"}
+                                definition={"definition"}
+                            />
+                        </PageFlexWrapper>
+                    )
+                }
+            />
+            <Route
+                exact={true}
+                path="/Dashboard"
+                render={
+                    () => (
+                        <PageFlexWrapper>
+                            <Dashboard
+                            />
+                        </PageFlexWrapper>
                     )
                 }
             />

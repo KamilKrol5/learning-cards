@@ -30,14 +30,14 @@ class Dashboard extends Component {
                     <NavBarUser></NavBarUser>
                 </div>
                 <div  className="flex-column w-100" id="dashDiv">
-                    <div className="bg-light w-50 h-25" id="createSet">
+                    <div className="bg-light" id="createSet">
 
                         <form onSubmit={(e) => {this.addState(e)}}>
                             <p><input ref={(input) => {this.newSet = input}} type="text" /></p>
                             <p><button>AddState</button></p>
                         </form>
                     </div>
-                    <div className="bg-light w-50" id="reviewSets">
+                    <div className="bg-light" id="reviewSets">
                         <h5 className="text-uppercase text-muted mb-0 card-title">List of sets: </h5>
                         <ul>
                             {this.state.sets.map(item => (

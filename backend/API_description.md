@@ -1,20 +1,20 @@
 # Learning Cards API description
    <strong>1. AUTHENTICATION</strong>  
     Learning Cards API uses JWT tokens for authentication.  
-    To get JWT token make a POST api call with 
+    To get a JWT token make a POST API call with 
     valid credentials. If valid credentials are provided two
     tokens will be returned in the response body section. These two tokens are 
     access and refresh tokens.  
     Access token lifetime is 5 minutes.  
     Refresh token lifetime is 1 day.  
-    The validity of a token can be checked by api POST call:
+    The validity of a token can be checked by API POST call:
     <code>/api/token/verify/</code> with 
     <code>token</code> field containing the token to be verified.  
 <strong>2. ENDPOINTS</strong>  
-1. Login user  
-    For logging a user in a POST api request containing valid 
+1. User login  
+    For logging a user in, a POST API request containing valid 
     credentials in the body is required.   
-    Api endpoint for it is:  <code>\<api address\>/api/token/</code>  
+    API endpoint for that is:  <code>\<api address\>/api/token/</code>  
     The body should contain valid credentials as shown below.  
     ```json
     {
@@ -35,12 +35,12 @@
     There is an example of the body of such a response below.  
     ```json
     {
-    "detail": "No active account found with the given credentials"
+        "detail": "No active account found with the given credentials"
     }
     ```
 2. Register user  
     Endpoint for this purpose is <code>\<api address\>/api/register/</code>.
-    In order to register user a POST API request containing
+    In order to register a user, a POST API request containing
     valid data in the body must be sent. The user's data should be
     formed as below.
     ```json
@@ -54,10 +54,10 @@
     body is returned.
     ```json
     [
-    "User created"
+        "User created"
     ]
     ```
-    If one of the fields is not provided the api will return
+    If one of the fields is not provided the API will return
     a response with corresponding error. The form of such an error below.
     ```json
     {
@@ -66,22 +66,22 @@
         "password": [ "This field is required." ]
     }
     ```
-    If provided username is already assigned to another user the body
+    If provided username is already assigned to another user, the body
     of the response will be as below.
     ```json
     {
         "username": [ "A user with that username already exists." ]
     }
     ```
-    If provided email is invalid the json in the response will contain field  
+    If the provided email is invalid, the JSON in the response will contain field  
     ``"email": [ "Enter a valid email address." ]``.  
-    If any of fields will be left empty the response body will contain  
-     ``"email": [ "This field may not be blank." ]`` (in case of empty email field).
+    If any of the fields will be left empty the response body will contain  
+     ``"email": [ "This field may not be blank." ]`` (in case of an empty email field).
     
 3. Acquire learning sets  
     Endpoint for this purpose is <code>\<api address\>/api/sets/</code>.
-    To acquire learning sets a GET request needs to be sent. If the valid
-    JWT access token is not included the API will return the response with 
+    To acquire learning sets, a GET request needs to be sent. If a valid
+    JWT access token is not included, the API will return a response with 
     a corresponding error (look below). 
     ```json
     {
@@ -115,9 +115,9 @@
     ]
     ```
     If a set ID is already known, there is an option to get information
-    related to this learning set. To do so the GET request should be sent to
+    related to that learning set. To do so, the GET request should be sent to
     <code>\<api address\>/api/sets/\<id\></code>. Such a request will return a response 
-    in the same form as the previous one, but the list will contain only one element having provided id.
+    in the same form as the previous one, but the list will contain only one element having the provided ID.
 4. Acquire sets' items  
     Endpoint for this purpose is <code>\<api address\>/api/items/</code>.
     This endpoint works the same way as the previous one for acquiring learning sets.
@@ -130,7 +130,7 @@
     for such a case is <code>\<api address\>/api/items/?set_id=\<set_id\></code> or
     <code>\<api address\>/api/items/?learning_set_id=<\set_id\></code>.  
     Example call is ``http://127.0.0.1:8000/api/items/?set_id=2`` and the response body 
-    has the form as shown below.
+    has the form shown below.
     ```
     [
         {
@@ -154,37 +154,37 @@
     Example ``http://127.0.0.1:8000/api/sets/?search=name``. JWT token rules
     are the same as when getting sets (point 3).
 6. Refresh JWT token  
-    To refresh JWT access token a refresh token is required. in order to
-    refresh access token - get new access token, an POST API request should be sent.
-    The request body should have ``refresh`` field containing valid refresh token.
-    If the refresh token is valid the response with status 200 (OK) will be returned and 
-    there will be new access token in the body of the response (shown below). 
+    To refresh a JWT access token, a refresh token is required. In order to
+    refresh an access token (get a new one), a POST API request should be sent.
+    The request body should have ``refresh`` field containing a valid refresh token.
+    If the refresh token is valid, a response with status 200 (OK) will be returned and 
+    there will be a new access token in the body of the response (shown below). 
     ```json
     {
         "access": "<new access token>"
     }
     ```
-    If invalid refresh token is provided, the response will have status 401 (unauthorized)
-    and the body fill contain the following JSON.
+    If an invalid refresh token is provided, the response will have status 401 (Unauthorized)
+    and the body will contain the following JSON.
     ```json
     {
         "detail": "Token is invalid or expired",
         "code": "token_not_valid"
     }
     ```
-    To make a request to this API endpoint access token is not required.
+    To make a request to this API endpoint, an access token is not required.
 7. Verify JWT token  
     The endpoint for this purpose is ``<api address>/api/token/verify/``. To verify 
-    token validity a POST request should be sent. The request body should contain 
-    ``token`` field with token to be verified. If the token is valid, a response with
+    token validity, a POST request should be sent. The request body should contain 
+    ``token`` field with a token to be verified. If the token is valid, a response with
     status 200 (OK) will be returned. If the provided token is invalid, a 
-    response with status 401 (unauthorized) will be returned and its body will contain json shown below.
+    response with status 401 (Unauthorized) will be returned and its body will contain JSON shown below.
     ```json
     {
-    "detail": "Token is invalid or expired",
-    "code": "token_not_valid"
+        "detail": "Token is invalid or expired",
+        "code": "token_not_valid"
     }
     ```
-    To make a request to this API endpoint access token is not required.
+    To make a request to this API endpoint, an access token is not required.
     
 

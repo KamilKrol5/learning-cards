@@ -1,6 +1,7 @@
 //dependencies
 import React from 'react';
 import {BrowserRouter, Route} from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.css';
 //components
 import PageFlexWrapper from "./wrappers/pagewrapper/PageFlexWrapper";
 import LoginWrapper from "./wrappers/pagewrapper/LoginWrapper";
@@ -8,7 +9,7 @@ import Home from "./pages/home/Home";
 import Login from "./pages/auth/Login";
 import ApiTest from "./pages/ApiTest";
 import Register from "./pages/auth/Register";
-import Dashboard from "./pages/Dashboard/Dashboard";
+import Dashboard from "./pages/dashboard/Dashboard";
 import NavBar from "./common/navbar/NavBar";
 import Mode1 from "./common/mode1/Mode1";
 import FlipCard from "./common/flipcard/FlipCard";
@@ -75,17 +76,6 @@ function App() {
                 }
             />
 
-            <Route
-                exact={true}
-                path="/setcard"
-                render={
-                    () => (
-                        <LoginWrapper>
-                            <SetCard title={"setcard"} height={"10%"}></SetCard>
-                        </LoginWrapper>
-                    )
-                }
-            />
             <Route
                 exact={true}
                 path="/profile"

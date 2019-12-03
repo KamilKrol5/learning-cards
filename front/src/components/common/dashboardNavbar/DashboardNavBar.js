@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import {Link} from "react-router-dom";
-import './navbaruser.css'
+import './dashboardNavBar.css'
 
-class NavBarUser extends Component {
+class DashboardNavBar extends Component {
     render() {
         return (
                 <nav className="navbar navbar-light bg-light navbar-expand-md h-100 p-1 m-sidebar">
@@ -26,4 +26,4 @@ class NavBarUser extends Component {
     }
 }
 
-export default NavBarUser;
+export default DashboardNavBar;

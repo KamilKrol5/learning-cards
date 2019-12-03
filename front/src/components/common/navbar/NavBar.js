@@ -20,7 +20,6 @@ class NavBar extends Component {
                     <Link className="m-nav-btn m-nav-link" to="/flipcard">FlipCard</Link>
                     <Link className="m-nav-btn m-nav-link" to="/card">Card</Link>
                     <Link className="m-nav-btn m-nav-link" to="/dashboard">Dashboard</Link>
-                    <Link className="m-nav-btn m-nav-link" to="/setcard">SetCard</Link>
                 </div>
             </nav>
         );

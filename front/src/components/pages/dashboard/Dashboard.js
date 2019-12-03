@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import NavBarUser from "../../common/navbar/NavBarUser";
+import DashboardNavBar from "../../common/dashboardNavbar/DashboardNavBar";
 import './dashboard.css'
 import SetCard from "../../common/setCard/SetCard";
 import SetsView from "../SetsView/SetsView";
@@ -26,9 +26,9 @@ class Dashboard extends Component {
 
     render() {
         return (
-            <div  id="main-div">
+            <div id="main-div">
                 <div id="navDiv">
-                    <NavBarUser></NavBarUser>
+                    <DashboardNavBar></DashboardNavBar>
                 </div>
                 <SetsView></SetsView>
             </div>

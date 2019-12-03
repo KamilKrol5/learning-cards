@@ -35,7 +35,7 @@
 input{
     width: 100%;
     border: none;
-    border-bottom: 2px solid red;
+    border-bottom: 2px solid dodgerblue;
     background-color: #e7e7e7;
 }
 input:focus { outline: none; }

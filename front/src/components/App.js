@@ -14,6 +14,7 @@ import Mode1 from "./common/mode1/Mode1";
 import FlipCard from "./common/flipcard/FlipCard";
 import Card from "./common/card/Card";
 import Mode2 from "./common/mode2/Mode2";
+import SetCard from "./common/setCard/SetCard";
 
 //other stuff
 
@@ -74,6 +75,17 @@ function App() {
                 }
             />
 
+            <Route
+                exact={true}
+                path="/setcard"
+                render={
+                    () => (
+                        <LoginWrapper>
+                            <SetCard title={"setcard"} height={"10%"}></SetCard>
+                        </LoginWrapper>
+                    )
+                }
+            />
             <Route
                 exact={true}
                 path="/profile"

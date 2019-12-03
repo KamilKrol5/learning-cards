@@ -1,5 +1,4 @@
 #main-div {
-    background: url("../../../assets/color-2174065.png") no-repeat;
     background-size:cover;
     width: 100%;
     display: flex;
@@ -26,16 +25,15 @@
     width: 75%;
     border-radius: 20px;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
-    height: fit-content;
-    margin-top: 5%;
-    max-height: 40vh;
+    min-height: 60vh;
+    max-height: 80vh;
     overflow-y: scroll;
 }
 #reviewSets h5{
     margin-left:1%;
-    margin-top:20%;
     font-size: 15px;
 }
+.top-buffer { margin-top:20px; }
 @media (max-width: 767px){
     #navDiv{
         min-width: 4rem;

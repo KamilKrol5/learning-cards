@@ -64,17 +64,33 @@
     height: fit-content;
     top:26%;
     right: 30%;
-    color:#b80460;
-    border-radius: 2    0px;
+    color:dodgerblue;
+    border-radius: 20px;
     font-size: 15px;
+}
+.m-button-skip:hover{
+    color: gold;
 }
 .m-button-answer{
     position: absolute;
-    width: 10%;
-    height: 5%;
+    width: fit-content;
+    height: fit-content;
+    padding: 20px 60px;
+
+    text-transform: uppercase;
+    border-radius: 10px;
+    display: inline-block;
     bottom:27%;
     right: 30%;
-    background-color: #b80460;
+    background-color: dodgerblue;
+    color: #fcfcfc;
+}
+.m-button-answer:hover{
+    color: #272727;
+    background-color: gold;
+}
+.m-button-answer:checked{
+
 }
 
 

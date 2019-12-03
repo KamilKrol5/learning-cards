@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import NavBarUser from "../../common/navbar/NavBarUser";
 import './dashboard.css'
+import SetCard from "../../common/setCard/SetCard";
 /**
  * Komponent zawierający profil użytkownika
  */
@@ -25,7 +26,7 @@ class Dashboard extends Component {
     render() {
         // const {userSets} = this.state;
         return (
-            <div id="main-div">
+            <div  id="main-div">
                 <div id="navDiv">
                     <NavBarUser></NavBarUser>
                 </div>
@@ -37,13 +38,15 @@ class Dashboard extends Component {
                             <p><button>AddState</button></p>
                         </form>
                     </div>
-                    <div className="bg-light" id="reviewSets">
+                    <div className="bg-light container" id="reviewSets">
                         <h5 className="text-uppercase text-muted mb-0 card-title">List of sets: </h5>
-                        <ul>
+                        <div className="row top-buffer">
                             {this.state.sets.map(item => (
-                                <li key={item}>{item}</li>
+                                <div className="col-sm-6 col-lg-4"> <SetCard height={"100px"} title={item} key={item}></SetCard>
+                                <div className="top-buffer"></div>
+                                </div>
                             ))}
-                        </ul>
+                        </div>
                     </div>
                 </div>
             </div>

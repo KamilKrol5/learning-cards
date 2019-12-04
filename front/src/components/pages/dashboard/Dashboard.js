@@ -3,6 +3,7 @@ import DashboardNavBar from "../../common/dashboardNavbar/DashboardNavBar";
 import './dashboard.css'
 import SetCard from "../../common/setCard/SetCard";
 import SetsView from "../SetsView/SetsView";
+import EditSet from "../editSet/EditSet";
 /**
  * Komponent zawierający profil użytkownika
  */
@@ -30,7 +31,7 @@ class Dashboard extends Component {
                 <div id="navDiv">
                     <DashboardNavBar></DashboardNavBar>
                 </div>
-                <SetsView></SetsView>
+                <EditSet></EditSet>
             </div>
         );
     }

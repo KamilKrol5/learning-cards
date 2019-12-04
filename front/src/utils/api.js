@@ -30,7 +30,18 @@ const API = {
             },
             timeout: apiCallTimeout,
         })
-    }
+    },
+
+    getUserSets: (accessToken) => {
+        return apiServer({
+            url: "/api/sets/",
+            method: "get",
+            data: {
+                token: accessToken
+            },
+            timeout: apiCallTimeout,
+        })
+    },
 };
 
 export default API;

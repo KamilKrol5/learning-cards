@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './card.css';
+import '../../../style/card.css';
 
 class Card extends Component {
     render() {

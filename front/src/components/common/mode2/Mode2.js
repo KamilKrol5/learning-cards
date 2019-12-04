@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import './mode2.css';
-import Card2 from "../card2/Card2";
 import API from "../../../utils/api";
 import {connect} from "react-redux";
 

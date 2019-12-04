@@ -1,22 +1,3 @@
-.m-card {
-    width: 100%;
-    height: 100%;
-
-    border-radius: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    background-color: #e7e7e7;
-    margin: 0;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.m-card-line {
-    width: 60%;
-    border-bottom: 1px solid #9f9f9f;
-}
-
 .m-card-term, .m-card-definition {
     height: 50%;
     display: flex;
@@ -26,6 +7,6 @@
 
 .m-card-term p, .m-card-definition p {
     color: #272727;
-    font-size: 20px;
+    font-size: 22px;
 }
 

@@ -32,12 +32,12 @@ const API = {
         })
     },
 
-    getUserSets: (accessToken) => {
+    getUserSets: (token) => {
         return apiServer({
             url: "/api/sets/",
             method: "get",
-            data: {
-                token: accessToken
+            headers: {
+                Authorization: `Bearer ${token}`
             },
             timeout: apiCallTimeout,
         })

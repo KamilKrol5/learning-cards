@@ -41,6 +41,12 @@ class LearningSetRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
         else:
             raise NotAcceptable("Cannot edit sets which belong to other users")
 
+    def perform_destroy(self, instance):
+        if self.request.user.id == self.queryset.get(pk=self.kwargs.get('pk', None)).owner.id:
+            return instance.delete()
+        else:
+            raise NotAcceptable("Cannot remove sets which belong to other users")
+
 
 class ItemsListAPIView(ListCreateAPIView):
     serializer_class = serializers.ItemSerializer

@@ -24,6 +24,13 @@ class LearningSetSerializer(serializers.ModelSerializer):
         fields = ['id', 'name', 'owner', 'creation_date']
 
 
+class LearningSetReadOnlyOwnerSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = LearningSet
+        fields = ['id', 'name', 'owner', 'creation_date']
+        read_only_fields = ['owner']
+
+
 class ItemSerializer(serializers.ModelSerializer):
     class Meta:
         model = Item

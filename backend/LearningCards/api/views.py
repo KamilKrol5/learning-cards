@@ -2,6 +2,7 @@ from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIV
 from LearningCards import models
 from . import serializers
 from rest_framework import status
+from rest_framework.exceptions import NotAcceptable
 from django.contrib.auth import get_user_model
 
 
@@ -27,13 +28,18 @@ class LearningSetsListAPIView(ListCreateAPIView):
         return queryset
 
     def perform_create(self, serializer):
-        print(self.request.data)
         serializer.save(owner=self.request.user)
 
 
 class LearningSetRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
     queryset = models.LearningSet.objects.all()
-    serializer_class = serializers.LearningSetSerializer
+    serializer_class = serializers.LearningSetReadOnlyOwnerSerializer
+
+    def perform_update(self, serializer):
+        if self.request.user.id == self.queryset.get(pk=self.kwargs.get('pk', None)).owner.id:
+            return serializer.save()
+        else:
+            raise NotAcceptable("Cannot edit sets which belong to other users")
 
 
 class ItemsListAPIView(ListCreateAPIView):

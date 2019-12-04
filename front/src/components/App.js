@@ -13,6 +13,7 @@ import NavBar from "./common/navbar/NavBar";
 import Mode1 from "./common/mode1/Mode1";
 import FlipCard from "./common/flipcard/FlipCard";
 import Card from "./common/card/Card";
+import UserInfo from "./common/user/UserInfo";
 
 //other stuff
 
@@ -69,6 +70,18 @@ function App() {
                         <LoginWrapper>
                             <Register/>
                         </LoginWrapper>
+                    )
+                }
+            />
+
+            <Route
+                exact={true}
+                path="/user"
+                render={
+                    () => (
+                        <PageFlexWrapper>
+                            <UserInfo/>
+                        </PageFlexWrapper>
                     )
                 }
             />

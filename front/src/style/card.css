@@ -10,6 +10,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    transition: background-color .2s;
 }
 
 .m-card-line {

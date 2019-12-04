@@ -140,8 +140,8 @@ function App() {
                             <CheckCard
                                 term={"term"}
                                 definition={"definion"}
-                                checkClick={() => {
-                                    console.log(Math.random())
+                                checkResult={(value) => {
+                                    console.log(value)
                                 }}
                             />
                         </PageFlexWrapper>

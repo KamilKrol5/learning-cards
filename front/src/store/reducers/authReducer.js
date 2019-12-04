@@ -18,7 +18,6 @@ export const auth = (state = defaultState, action) => {
                 loginErrorMessage: null,
                 registerErrorMessage: null,
                 registerSuccessful: null,
-
             };
         case 'LOGIN_ERROR':
             return {

@@ -1,6 +1,7 @@
 const defaultState = {
     refreshToken: null,
     accessToken: null,
+    userName: null,
     loginErrorMessage: null,
     registerErrorMessage: null,
     registerSuccessful: null,
@@ -13,14 +14,17 @@ export const auth = (state = defaultState, action) => {
             return {
                 refreshToken: action.refreshToken,
                 accessToken: action.accessToken,
+                userName: action.userName,
                 loginErrorMessage: null,
                 registerErrorMessage: null,
                 registerSuccessful: null,
+
             };
         case 'LOGIN_ERROR':
             return {
                 refreshToken: null,
                 accessToken: null,
+                userName: null,
                 loginErrorMessage: action.errorContent,
                 registerErrorMessage: null,
                 registerSuccessful: null,
@@ -29,6 +33,7 @@ export const auth = (state = defaultState, action) => {
             return {
                 refreshToken: state.refreshToken,
                 accessToken: state.accessToken,
+                userName: state.userName,
                 loginErrorMessage: null,
                 registerErrorMessage: null,
                 registerSuccessful: null,
@@ -37,6 +42,7 @@ export const auth = (state = defaultState, action) => {
             return {
                 refreshToken: state.refreshToken,
                 accessToken: state.accessToken,
+                userName: state.userName,
                 loginErrorMessage: null,
                 registerErrorMessage: action.errorMessage,
                 registerSuccessful: null,
@@ -45,6 +51,7 @@ export const auth = (state = defaultState, action) => {
             return {
                 refreshToken: state.refreshToken,
                 accessToken: state.accessToken,
+                userName: state.userName,
                 loginErrorMessage: null,
                 registerErrorMessage: null,
                 registerSuccessful: true,

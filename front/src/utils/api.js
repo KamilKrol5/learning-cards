@@ -56,6 +56,20 @@ const API = {
             timeout: apiCallTimeout,
         })
     },
+
+    addSet: (name, token) => {
+        return apiServer({
+            url: "/api/sets/",
+            method: "post",
+            headers: {
+                Authorization: `Bearer ${token}`
+            },
+            data: {
+                name: name,
+            },
+            timeout: apiCallTimeout,
+        })
+    }
 };
 
 export default API;

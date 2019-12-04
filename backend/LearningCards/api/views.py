@@ -26,6 +26,10 @@ class LearningSetsListAPIView(ListCreateAPIView):
         queryset = queryset.filter(owner=owner, name__contains=name)
         return queryset
 
+    def perform_create(self, serializer):
+        print(self.request.data)
+        serializer.save(owner=self.request.user)
+
 
 class LearningSetRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
     queryset = models.LearningSet.objects.all()

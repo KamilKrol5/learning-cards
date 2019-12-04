@@ -1,6 +1,7 @@
 //dependencies
 import React from 'react';
 import {BrowserRouter, Route} from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.css';
 //components
 import PageFlexWrapper from "./wrappers/pagewrapper/PageFlexWrapper";
 import LoginWrapper from "./wrappers/pagewrapper/LoginWrapper";
@@ -8,12 +9,14 @@ import Home from "./pages/home/Home";
 import Login from "./pages/auth/Login";
 import ApiTest from "./pages/ApiTest";
 import Register from "./pages/auth/Register";
-import Dashboard from "./pages/Dashboard";
+import Dashboard from "./pages/dashboard/Dashboard";
 import NavBar from "./common/navbar/NavBar";
 import Mode1 from "./common/mode1/Mode1";
 import FlipCard from "./common/flipcard/FlipCard";
 import Card from "./common/card/Card";
 import UserInfo from "./common/user/UserInfo";
+import Mode2 from "./common/mode2/Mode2";
+import SetCard from "./common/setCard/SetCard";
 
 //other stuff
 
@@ -112,6 +115,17 @@ function App() {
                     )
                 }
             />
+            <Route
+                exact={true}
+                path="/mode2"
+                render={
+                    () => (
+                        <PageFlexWrapper>
+                            <Mode2/>
+                        </PageFlexWrapper>
+                    )
+                }
+            />
 
             <Route
                 exact={true}
@@ -142,6 +156,18 @@ function App() {
                                 height={"250px"}
                                 term={"term"}
                                 definition={"definition"}
+                            />
+                        </PageFlexWrapper>
+                    )
+                }
+            />
+            <Route
+                exact={true}
+                path="/Dashboard"
+                render={
+                    () => (
+                        <PageFlexWrapper>
+                            <Dashboard
                             />
                         </PageFlexWrapper>
                     )

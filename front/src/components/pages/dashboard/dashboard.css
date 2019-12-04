@@ -1,0 +1,41 @@
+#main-div {
+    background-size:cover;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+}
+#navDiv{
+    min-width: 15rem;
+}
+#dashDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex:1;
+}
+#createSet{
+    border-radius: 20px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 4%;
+    width: 75%;
+    align-self: center;
+}
+#reviewSets{
+    width: 75%;
+    border-radius: 20px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+    min-height: 60vh;
+    max-height: 80vh;
+    overflow-y: scroll;
+}
+#reviewSets h5{
+    margin-left:1%;
+    font-size: 15px;
+}
+.top-buffer { margin-top:20px; }
+@media (max-width: 767px){
+    #navDiv{
+        min-width: 4rem;
+    }
+}

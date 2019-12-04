@@ -4,7 +4,7 @@ import './index.css';
 /*
  * Jak potrzeba bootstrap, odkomentujcie
  */
-// import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import App from './components/App';
 import * as serviceWorker from './serviceWorker';
 import {store} from './store/store';

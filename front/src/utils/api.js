@@ -45,14 +45,12 @@ const API = {
 
     getSetItems: (setID, token) => {
         return apiServer({
-            url: "/api/items/",
+            url: `/api/items/?set_id=${setID}`,
             method: "get",
             headers: {
                 Authorization: `Bearer ${token}`
             },
-            data: {
-                set_id: setID,
-            },
+            data: {},
             timeout: apiCallTimeout,
         })
     },

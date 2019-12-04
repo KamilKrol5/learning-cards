@@ -105,6 +105,7 @@ function App() {
                     () => (
                         <PageFlexWrapper>
                             <Mode1
+                                setID={5}
                                 setName={"Moje słówka"}
                             />
                         </PageFlexWrapper>

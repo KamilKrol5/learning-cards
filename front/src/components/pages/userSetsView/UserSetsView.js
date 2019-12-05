@@ -66,7 +66,7 @@ class UserSetsView extends Component {
             </div>;
 
         return (
-            <div className="bg-light container h-100">
+            <div className="container h-100">
                 <h5 className="text-dark text-lg-center mb-5 mt-5">Your sets </h5>
                 <hr/>
                 {this.state.error ? unsuccessfulFetchFromAPI : successfulFetchFromAPI}

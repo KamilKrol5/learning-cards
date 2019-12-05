@@ -3,35 +3,14 @@ import DashboardNavBar from "../../common/dashboardNavbar/DashboardNavBar";
 import './dashboard.css'
 import UserSetsView from "../userSetsView/UserSetsView";
 
-/**
- * Komponent zawierający profil użytkownika
- */
-class Dashboard extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            sets: []
-        }
-    }
-
-    addState(e) {
-        e.preventDefault();
-        const {sets} = this.state;
-        const newSet = this.newSet.value;
-
-        this.setState({
-            sets: [...this.state.sets, newSet]
-        })
-    }
-
-    render() {
+class Dashboard extends Component {   render() {
         return (
-            <div id="main-div">
-                <div id="navDiv">
+            <div className="m-dashboard-wrapper m-flex-ctr-cnt">
+                <div className="m-dashboard-nav">
                     <DashboardNavBar>
                     </DashboardNavBar>
                 </div>
-                <div id="dashDiv">
+                <div className="m-dashboard-content">
                     <UserSetsView>
                     </UserSetsView>
                 </div>

@@ -9,6 +9,7 @@ import FormInput from "../../common/FormInput";
 import * as AuthActions from '../../../store/actions/authActions';
 //css
 import './auth.css';
+import {Redirect, Route} from 'react-router';
 import {Link} from "react-router-dom";
 import '../../../style/error.css'
 
@@ -26,42 +27,56 @@ class Login extends Component {
         this.props.resetState()
     }
 
+
     render() {
         return (
-            <div id="m-auth-page">
-                <div className="m-auth-page-bg">
-                    <Link to="/" className="m-auth-page-logo">LearningCards</Link>
-                </div>
-                <div className="m-auth-page-form-wrapper">
-                    <div
-                        style={{height: this.props.auth.loginErrorMessage && "45px"}}
-                        className="m-error-popup"
-                    >
-                        <p className="m-error-popup-p">{this.props.auth.loginErrorMessage}</p>
-                    </div>
-                    <form className="m-auth-page-form" method="post" onSubmit={e => {
-                        e.preventDefault();
-                        this.props.loginAPIcall(this.props.values.username, this.props.values.password);
-                    }}
-                    >
-                        {fields.map((field, index) => {
-                            return (
-                                <FormInput
-                                    {...field}
-                                    key={index}
-                                    keyv={index}
-                                    value={this.props.values[field.name]}
-                                    touched={this.props.touched[field.name]}
-                                    errors={this.props.errors[field.name]}
-                                    onChange={this.props.handleChange}
-                                    onBlur={this.props.handleBlur}
-                                />
-                            )
-                        })}
-                        <button className="m-form-btn-submit">Login</button>
-                    </form>
-                </div>
-            </div>
+            <Route>
+                {
+                    this.props.auth.username
+
+                        ?
+
+                        <Redirect to={"/"}/>
+
+                        :
+
+                        <div id="m-auth-page">
+                            <div className="m-auth-page-bg m-flex-ctr-cnt">
+                                <Link to="/" className="m-auth-page-logo">LearningCards</Link>
+                            </div>
+                            <div className="m-auth-page-form-wrapper m-flex-ctr-cnt">
+                                <div
+                                    style={{height: this.props.auth.loginErrorMessage && "45px"}}
+                                    className="m-error-popup"
+                                >
+                                    <p className="m-error-popup-p">{this.props.auth.loginErrorMessage}</p>
+                                </div>
+                                <form className="m-auth-page-form m-flex-ctr-cnt" method="post" onSubmit={e => {
+                                    e.preventDefault();
+                                    this.props.loginAPIcall(this.props.values.username, this.props.values.password);
+                                }}
+                                >
+                                    {fields.map((field, index) => {
+                                        return (
+                                            <FormInput
+                                                {...field}
+                                                key={index}
+                                                keyv={index}
+                                                value={this.props.values[field.name]}
+                                                touched={this.props.touched[field.name]}
+                                                errors={this.props.errors[field.name]}
+                                                onChange={this.props.handleChange}
+                                                onBlur={this.props.handleBlur}
+                                            />
+                                        )
+                                    })}
+                                    <button className="m-form-btn-submit">Login</button>
+                                </form>
+                            </div>
+                        </div>
+                }
+            </Route>
+
         );
     }
 }

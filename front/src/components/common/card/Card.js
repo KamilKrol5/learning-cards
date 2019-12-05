@@ -13,11 +13,11 @@ class Card extends Component {
                      }
                  }
             >
-                <div className="m-card-term">
+                <div className="m-card-term m-flex-ctr-cnt">
                     <p>{this.props.term}</p>
                 </div>
                 <div className="m-card-line"/>
-                <div className="m-card-definition">
+                <div className="m-card-definition m-flex-ctr-cnt">
                     <p>{this.props.definition}</p>
                 </div>
             </div>

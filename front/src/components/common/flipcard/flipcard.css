@@ -12,7 +12,7 @@
     text-align: center;
     transition: transform 0.6s;
     transform-style: preserve-3d;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     border-radius: 10px;
 }
 
@@ -26,9 +26,6 @@
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .m-flip-card-front {
@@ -42,6 +39,6 @@
     transform: rotateY(180deg);
 }
 
-.m-flip-card-front p, .m-flip-card-back p{
+.m-flip-card-front p, .m-flip-card-back p {
     font-size: 25px;
 }

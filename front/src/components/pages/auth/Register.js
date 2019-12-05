@@ -26,14 +26,14 @@ class Register extends Component {
 
     render() {
 
-        const registerPage = <div className="m-auth-page-form-wrapper">
+        const registerPage = <div className="m-auth-page-form-wrapper m-flex-ctr-cnt">
             <div
                 style={{height: this.props.auth.registerErrorMessage && "45px"}}
                 className="m-error-popup"
             >
                 <p className="m-error-popup-p">{this.props.auth.registerErrorMessage}</p>
             </div>
-            <form className="m-auth-page-form" method="post" onSubmit={e => {
+            <form className="m-auth-page-form m-flex-ctr-cnt" method="post" onSubmit={e => {
                 this.props.resetState();
                 e.preventDefault();
                 this.props.register(this.props.values.username, this.props.values.email, this.props.values.password);
@@ -59,8 +59,8 @@ class Register extends Component {
 
 
         const registerSuccessfulPage = <div className="m-auth-page-form-wrapper">
-            <div className="m-auth-page-reg-ok">
-                <div className="m-auth-page-reg-ok-msg">
+            <div className="m-auth-page-reg-ok m-flex-ctr-cnt">
+                <div className="m-auth-page-reg-ok-msg m-flex-ctr-cnt">
                     <svg className="m-auth-page-reg-ok-msg-img"
                          xmlns="http://www.w3.org/2000/svg"
                          viewBox="0 0 24 24"
@@ -81,7 +81,7 @@ class Register extends Component {
 
         return (
             <div id="m-auth-page">
-                <div className="m-auth-page-bg">
+                <div className="m-auth-page-bg m-flex-ctr-cnt">
                     <Link to="/" className="m-auth-page-logo">LearningCards</Link>
                 </div>
                 {

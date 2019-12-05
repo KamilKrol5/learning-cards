@@ -8,16 +8,25 @@
 .m-auth-page-logo {
     display: inline-block;
     margin: 0;
-    color: white;
     font-size: 32px;
-    text-decoration: none;
     max-height: 80px;
+    transition: color .3s;
 }
 
+.m-auth-page-logo,
+.m-auth-page-logo:hover,
+.m-auth-page-logo:active,
+.m-auth-page-logo:link {
+    color: white;
+    text-decoration: none;
+}
+
+.m-auth-page-logo:hover {
+    color: #c4c4c4;
+}
+
+
 .m-auth-page-bg {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     width: 100%;
     height: 10%;
     background: url("../../../assets/color-2174065.png");
@@ -26,22 +35,13 @@
 .m-auth-page-form-wrapper {
     width: 100%;
     height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     position: relative;
 }
 
 .m-auth-page-reg-ok {
-    display: flex;
-    align-items: center;
     flex-direction: column;
 }
 
-.m-auth-page-reg-ok-msg {
-    display: flex;
-    align-items: center;
-}
 
 .m-auth-page-reg-ok-msg-img {
     margin: 0 10px;
@@ -55,16 +55,10 @@
 }
 
 .m-auth-page-form {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
 }
 
 .m-form-input-group {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
 }
 

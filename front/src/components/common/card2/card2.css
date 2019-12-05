@@ -3,7 +3,7 @@
     height: 100%;
 
     border-radius: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     background-color: #e7e7e7;
     margin: 0;
 
@@ -24,7 +24,8 @@
     align-items: center;
     justify-content: flex-start;
 }
-.m-card-definition{
+
+.m-card-definition {
     height: 50%;
     width: 40%;
     margin-left: 2%;
@@ -32,13 +33,17 @@
     align-items: center;
     justify-content: flex-start;
 }
-input{
+
+input {
     width: 100%;
     border: none;
     border-bottom: 2px solid dodgerblue;
     background-color: #e7e7e7;
 }
-input:focus { outline: none; }
+
+input:focus {
+    outline: none;
+}
 
 .m-card-term p, .m-card-definition p {
     color: #272727;

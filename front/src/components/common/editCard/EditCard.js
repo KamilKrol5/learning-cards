@@ -15,9 +15,9 @@ class EditCard extends Component {
     handleChange = (e) => {
         // e.preventDefault();
         this.setState({
-        [e.target.name]: e.target.value 
-        }, function () {
-            this.props.onItemChange(this.state,this.props.number);
+                [e.target.name]: e.target.value
+            }, function () {
+                this.props.onItemChange(this.state, this.props.number);
             }
         );
     };
@@ -40,7 +40,8 @@ class EditCard extends Component {
                                name="definition" placeholder="Definition" defaultValue={this.props.definition}/>
                     </form>
                 </div>
-                <button type="button" className="close m-button" aria-label="Close" onClick={() => this.props.onDelete(this.props.number)}>
+                <button type="button" className="close m-button" aria-label="Close"
+                        onClick={() => this.props.onDelete(this.props.number)}>
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>

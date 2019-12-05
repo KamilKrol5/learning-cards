@@ -1,32 +1,41 @@
 import React, {Component} from 'react';
 import './dashboardNavBar.css'
-import {Link} from "react-router-dom";
 import UserInfo from "../user/UserInfo";
+import {connect} from "react-redux";
+import * as DashboardActions from "../../../store/actions/dashboardActions";
 
 class DashboardNavBar extends Component {
     render() {
         return (
             <nav className={"m-dashboard-nav-wrapper"}>
                 <div className="m-dashboard-nav-logo-wrapper m-flex-ctr-cnt">
-                    <Link className="m-dashboard-nav-logo" to={"/"}>LearningCards</Link>
+                    <div
+                        className="m-dashboard-nav-logo"
+                        onClick={() => {
+                            this.props.setView()
+                        }}
+                    >
+                        LearningCards
+                    </div>
                 </div>
                 <div className="m-dashboard-nav-links">
-                    <ul className="nav flex-column bg-white mb-0 m-width-100">
+                    <ul className="nav flex-column mb-0 m-width-100">
                         <li className="nav-item">
-                            <Link
-                                className="nav-link text-dark bg-light text-center m-width-100"
-                                to="/"
+                            <div
+                                className="m-dashboard-nav-link m-width-100 no-select"
+                                onClick={() => {
+                                    this.props.setView()
+                                }}
                             >
                                 Zestawy
-                            </Link>
+                            </div>
                         </li>
                         <li className="nav-item">
-                            <Link
-                                className="nav-link text-dark bg-light text-center m-width-100"
-                                to="/"
+                            <div
+                                className="m-dashboard-nav-link m-width-100 no-select"
                             >
                                 Preferencje
-                            </Link>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -40,4 +49,12 @@ class DashboardNavBar extends Component {
     }
 }
 
-export default DashboardNavBar;
+const mapDispatchToProps = dispatch => {
+    return {
+        setView: () => {
+            dispatch(DashboardActions.setDashboardUserSetView())
+        },
+    }
+};
+
+export default connect(null, mapDispatchToProps)(DashboardNavBar);

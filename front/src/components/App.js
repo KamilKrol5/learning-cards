@@ -17,177 +17,197 @@ import UserInfo from "./common/user/UserInfo";
 import Mode2 from "./common/mode2/Mode2";
 import UserSetsView from "./pages/userSetsView/UserSetsView";
 import CheckCard from "./common/checkcard/CheckCard";
+import {connect} from "react-redux";
 
 //other stuff
 
 /**
  * Główny komponent aplikacji
  */
-function App() {
-
-    return (
-
-        <BrowserRouter>
-            <Route
-                exact={true}
-                path="/"
-                render={
-                    () => (
-                        <PageFlexWrapper>
-                            <NavBar/>
-                            <Home/>
-                        </PageFlexWrapper>
-                    )
-                }
-            />
-
-            <Route
-                path="/login"
-                render={
-                    () => (
-                        <LoginWrapper>
-                            <Login/>
-                        </LoginWrapper>
-                    )
-                }
-            />
+class App extends React.Component {
 
 
-            <Route
-                path="/signup"
-                render={
-                    () => (
-                        <LoginWrapper>
-                            <Register/>
-                        </LoginWrapper>
-                    )
-                }
-            />
+    render() {
+        return (
+            <BrowserRouter>
+                <Route
+                    exact={true}
+                    path="/"
+                    render={
+                        () => {
+                            if (this.props.auth.username) {
+                                return (
+                                    <PageFlexWrapper>
+                                        <Dashboard/>
+                                    </PageFlexWrapper>
+                                )
+                            } else {
+                                return (
+                                    <PageFlexWrapper>
+                                        <NavBar/>
+                                        <Home/>
+                                    </PageFlexWrapper>
+                                )
+                            }
+                        }
+                    }
+                />
 
-            <Route
-                path="/user"
-                render={
-                    () => (
-                        <PageFlexWrapper>
-                            <UserInfo/>
-                        </PageFlexWrapper>
-                    )
-                }
-            />
-
-            <Route
-                path="/profile"
-                render={
-                    () => (
-                        <PageFlexWrapper>
-                            <Dashboard/>
-                        </PageFlexWrapper>
-                    )
-                }
-            />
-
-            <Route
-                path="/mode1"
-                render={
-                    () => (
-                        <PageFlexWrapper>
-                            <Mode1
-                                setID={5}
-                                setName={"Moje słówka"}
-                            />
-                        </PageFlexWrapper>
-                    )
-                }
-            />
-            <Route
-                path="/mode2"
-                render={
-                    () => (
-                        <PageFlexWrapper>
-                            <Mode2
-                                setName={"Mode 2 dev"}
-                                setID={5}
-                            />
-                        </PageFlexWrapper>
-                    )
-                }
-            />
-
-            <Route
-                path="/checkcard"
-                render={
-                    () => (
-                        <PageFlexWrapper>
-                            <CheckCard
-                                term={"term"}
-                                definition={"definion"}
-                                checkResult={(value) => {
-                                    console.log(value)
-                                }}
-                            />
-                        </PageFlexWrapper>
-                    )
-                }
-            />
-
-            <Route
-                path="/flipcard"
-                render={
-                    () => (
-                        <PageFlexWrapper>
-                            <FlipCard
-                                width={"400px"}
-                                height={"250px"}
-                                term={"term"}
-                                definition={"definition"}
-                            />
-                        </PageFlexWrapper>
-                    )
-                }
-            />
+                <Route
+                    path="/login"
+                    render={
+                        () => (
+                            <LoginWrapper>
+                                <Login/>
+                            </LoginWrapper>
+                        )
+                    }
+                />
 
 
-            <Route
-                path="/card"
-                render={
-                    () => (
-                        <PageFlexWrapper>
-                            <Card
-                                width={"400px"}
-                                height={"250px"}
-                                term={"term"}
-                                definition={"definition"}
-                            />
-                        </PageFlexWrapper>
-                    )
-                }
-            />
-            <Route
-                path="/dashboard"
-                render={
-                    () => (
-                        <PageFlexWrapper>
-                            <Dashboard
-                            />
-                        </PageFlexWrapper>
-                    )
-                }
-            />
+                <Route
+                    path="/signup"
+                    render={
+                        () => (
+                            <LoginWrapper>
+                                <Register/>
+                            </LoginWrapper>
+                        )
+                    }
+                />
+
+                <Route
+                    path="/user"
+                    render={
+                        () => (
+                            <PageFlexWrapper>
+                                <UserInfo/>
+                            </PageFlexWrapper>
+                        )
+                    }
+                />
+
+                <Route
+                    path="/profile"
+                    render={
+                        () => (
+                            <PageFlexWrapper>
+                                <Dashboard/>
+                            </PageFlexWrapper>
+                        )
+                    }
+                />
+
+                <Route
+                    path="/mode1"
+                    render={
+                        () => (
+                            <PageFlexWrapper>
+                                <Mode1
+                                    setID={5}
+                                    setName={"Moje słówka"}
+                                />
+                            </PageFlexWrapper>
+                        )
+                    }
+                />
+                <Route
+                    path="/mode2"
+                    render={
+                        () => (
+                            <PageFlexWrapper>
+                                <Mode2
+                                    setName={"Mode 2 dev"}
+                                    setID={5}
+                                />
+                            </PageFlexWrapper>
+                        )
+                    }
+                />
+
+                <Route
+                    path="/checkcard"
+                    render={
+                        () => (
+                            <PageFlexWrapper>
+                                <CheckCard
+                                    term={"term"}
+                                    definition={"definion"}
+                                    checkResult={(value) => {
+                                        console.log(value)
+                                    }}
+                                />
+                            </PageFlexWrapper>
+                        )
+                    }
+                />
+
+                <Route
+                    path="/flipcard"
+                    render={
+                        () => (
+                            <PageFlexWrapper>
+                                <FlipCard
+                                    width={"400px"}
+                                    height={"250px"}
+                                    term={"term"}
+                                    definition={"definition"}
+                                />
+                            </PageFlexWrapper>
+                        )
+                    }
+                />
 
 
-            <Route
-                path="/user-sets"
-                render={
-                    () => (
-                        <PageFlexWrapper>
-                            <UserSetsView/>
-                        </PageFlexWrapper>
-                    )
-                }
-            />
+                <Route
+                    path="/card"
+                    render={
+                        () => (
+                            <PageFlexWrapper>
+                                <Card
+                                    width={"400px"}
+                                    height={"250px"}
+                                    term={"term"}
+                                    definition={"definition"}
+                                />
+                            </PageFlexWrapper>
+                        )
+                    }
+                />
+                <Route
+                    path="/dashboard"
+                    render={
+                        () => (
+                            <PageFlexWrapper>
+                                <Dashboard
+                                />
+                            </PageFlexWrapper>
+                        )
+                    }
+                />
 
-        </BrowserRouter>
-    );
+
+                <Route
+                    path="/user-sets"
+                    render={
+                        () => (
+                            <PageFlexWrapper>
+                                <UserSetsView/>
+                            </PageFlexWrapper>
+                        )
+                    }
+                />
+
+            </BrowserRouter>
+        )
+    }
 }
 
-export default App;
+const mapStateToProps = state => {
+    return {
+        auth: state.auth,
+    }
+};
+
+
+export default connect(mapStateToProps)(App);

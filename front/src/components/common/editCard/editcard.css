@@ -22,8 +22,10 @@
     color: black;
 }
 
-.m-form {
-    position: absolute;
-    bottom: 40%;
+.m-form{
+    display: flex;
+    justify-content: space-around;
+
+
 }
 

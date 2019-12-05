@@ -15,16 +15,18 @@ export const setDashboardPreferencesView = () => ({
 /**
  * Showing view of a single set
  */
-export const setDashboardSetView = (setID) => ({
+export const setDashboardSetView = (setID, setName) => ({
     setID,
+    setName,
     type: 'DASHBOARD_SET_VIEW',
 });
 
 /**
  *  Show view where a set can be edited
  */
-export const setDashboardEditSetView = (setID) => ({
+export const setDashboardEditSetView = (setID, setName) => ({
     setID,
+    setName,
     type: 'DASHBOARD_EDIT_SET_VIEW',
 });
 

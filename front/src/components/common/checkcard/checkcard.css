@@ -4,12 +4,6 @@
     color: #272727;
 }
 
-.m-card-part {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 .m-card-term-wrapper p {
     font-size: 30px;
 }

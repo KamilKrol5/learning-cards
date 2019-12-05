@@ -37,7 +37,7 @@ class UserInfo extends Component {
 
                         <div className="m-user-info-msg-wrapper">
                             <div
-                                className="m-user-info-msg"
+                                className="m-user-info-msg m-flex-ctr-cnt"
                                 style={{height: this.state.showLogoutButton && "100%"}}
                             >
                                 <div

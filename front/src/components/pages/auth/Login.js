@@ -29,17 +29,17 @@ class Login extends Component {
     render() {
         return (
             <div id="m-auth-page">
-                <div className="m-auth-page-bg">
+                <div className="m-auth-page-bg m-flex-ctr-cnt">
                     <Link to="/" className="m-auth-page-logo">LearningCards</Link>
                 </div>
-                <div className="m-auth-page-form-wrapper">
+                <div className="m-auth-page-form-wrapper m-flex-ctr-cnt">
                     <div
                         style={{height: this.props.auth.loginErrorMessage && "45px"}}
                         className="m-error-popup"
                     >
                         <p className="m-error-popup-p">{this.props.auth.loginErrorMessage}</p>
                     </div>
-                    <form className="m-auth-page-form" method="post" onSubmit={e => {
+                    <form className="m-auth-page-form m-flex-ctr-cnt" method="post" onSubmit={e => {
                         e.preventDefault();
                         this.props.loginAPIcall(this.props.values.username, this.props.values.password);
                     }}

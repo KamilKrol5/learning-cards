@@ -50,14 +50,14 @@ class Mode1 extends Component {
 
     render() {
         return (
-            <div className="m-mode-1">
+            <div className="m-mode-1 m-flex-ctr-cnt">
                 <div
                     style={{height: this.state.error && "45px"}}
                     className="m-error-popup"
                 >
                     <p className="m-error-popup-p">{this.state.error}</p>
                 </div>
-                <header className="m-mode-1-header">
+                <header className="m-mode-1-header m-flex-ctr-cnt">
                     <h1 className="m-mode-1-header-title">
                         {this.props.setName}
                     </h1>
@@ -67,8 +67,8 @@ class Mode1 extends Component {
 
                         ?
 
-                        <main className="m-mode-1-main">
-                            <div onClick={this.prevElement} className="m-mode-1-main-left">
+                        <main className="m-mode-1-main m-flex-ctr-cnt">
+                            <div onClick={this.prevElement} className="m-mode-1-main-left m-flex-ctr-cnt">
                                 <svg
                                     className="m-mode-1-main-arrow"
                                     xmlns="http://www.w3.org/2000/svg"
@@ -80,15 +80,15 @@ class Mode1 extends Component {
                                     <path fill="none" d="M0 0h24v24H0V0z"/>
                                 </svg>
                             </div>
-                            <div className="m-mode-1-main-middle">
-                                <div className="m-mode-1-card-wrapper">
+                            <div className="m-mode-1-main-middle m-flex-ctr-cnt">
+                                <div className="m-mode-1-card-wrapper no-select">
                                     <Card
                                         term={this.state.cards[this.state.current].term}
                                         definition={this.state.cards[this.state.current].definition}
                                     />
                                 </div>
                             </div>
-                            <div onClick={this.nextElement} className="m-mode-1-main-right">
+                            <div onClick={this.nextElement} className="m-mode-1-main-right m-flex-ctr-cnt">
                                 <svg
                                     className="m-mode-1-main-arrow"
                                     xmlns="http://www.w3.org/2000/svg"
@@ -104,7 +104,7 @@ class Mode1 extends Component {
 
                         :
 
-                        <main className="m-mode-1-main">
+                        <main className="m-mode-1-main m-flex-ctr-cnt">
                             <p>No cards found</p>
                         </main>
                 }
@@ -113,7 +113,7 @@ class Mode1 extends Component {
 
                     &&
 
-                    <footer className="m-mode-1-footer">
+                    <footer className="m-mode-1-footer m-flex-ctr-cnt no-select">
                         <p className="m-mode-1-footer-ctr">{this.state.current + 1}/{this.state.deckSize}</p>
                     </footer>
                 }

@@ -1,18 +1,16 @@
 .m-navbar {
     position: fixed;
     width: 100%;
-    display: flex;
     flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
 }
 
 .m-nav-link {
     margin: 5px;
-    padding: 10px;
+    padding: 10px 20px;
     display: inline-block;
     color: black;
     text-decoration: none;
+    text-align: center;
 }
 
 .m-nav-link:hover {
@@ -22,23 +20,10 @@
 
 .m-nav-right {
     min-width: 280px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .m-nav-left {
     min-width: 230px;
-}
-
-.m-nav-btn {
-    color:black;
-    font-size: 15px;
-    width: 130px;
-    text-align: center;
-    /*float: right;*/
-    border: 1px solid black;
-    border-radius: 30px;
 }
 
 .m-nav-logo, .m-nav-logo:hover {

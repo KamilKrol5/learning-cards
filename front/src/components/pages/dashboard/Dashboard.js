@@ -4,7 +4,7 @@ import './dashboard.css'
 import UserSetsView from "../userSetsView/UserSetsView";
 import {connect} from "react-redux";
 import * as DashboardActions from "../../../store/actions/dashboardActions";
-import {dashboard} from "../../../store/reducers/dashboardReducer";
+import ChooseModeView from "../../common/chooseModeView/ChooseModeView";
 import EditSet from "../editSet/EditSet";
 
 /**
@@ -42,7 +42,14 @@ class Dashboard extends Component {
                 return <EditSet editable={true}>
                 </EditSet>;
             case 'DASHBOARD_SET_VIEW':
-                return <EditSet editable={false}>
+                return <div>
+                    <ChooseModeView>
+                    </ChooseModeView>
+                    <EditSet editable={false}>
+                    </EditSet>
+                </div>;
+            case 'DASHBOARD_CREATE_SET_VIEW':
+                return <EditSet editable={true}>
                 </EditSet>;
             default:
                 return <div className="text-center"><h2>Error</h2></div>

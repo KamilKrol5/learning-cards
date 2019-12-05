@@ -41,10 +41,12 @@ class EditCard extends Component {
                                name="definition" placeholder="Definition" defaultValue={this.props.definition}/>
                     </form>
                 </div>
-                <button type="button" className="close m-button" aria-label="Close"
-                        onClick={() => this.props.onDelete(this.props.number)}>
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                {this.state.editable &&
+                    <button type="button" className="close m-button" aria-label="Close"
+                            onClick={() => this.props.onDelete(this.props.number)}>
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                }
             </div>
         );
     }

@@ -66,7 +66,7 @@ class EditSet extends Component {
                     }
                 </div>
                 <div className="row">
-                    {this.state.items.map(item => (
+                    {this.state.items.length !== 0 ? this.state.items.map(item => (
                         <div className="col-sm-12">
                             <EditCard height={"100px"} onDelete={this.handleDelete} key={item.id} term={item.term}
                                       definition={item.definition} number={item.id} editable={this.props.editable}
@@ -75,7 +75,10 @@ class EditSet extends Component {
                             <div className="top-buffer">
                             </div>
                         </div>
-                    ))}
+                    )) :
+                    <div className="text-center"><h3>The set is empty</h3></div>
+                    }
+
                     <div className="col-sm-12">
                         { (this.state.editable) &&
                             <form onSubmit={(e) => {

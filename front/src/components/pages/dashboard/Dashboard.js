@@ -6,6 +6,8 @@ import {connect} from "react-redux";
 import * as DashboardActions from "../../../store/actions/dashboardActions";
 import ChooseModeView from "../../common/chooseModeView/ChooseModeView";
 import EditSet from "../editSet/EditSet";
+import Mode1 from "../../common/mode1/Mode1";
+import Mode2 from "../../common/mode2/Mode2";
 
 
 class Dashboard extends Component {
@@ -49,6 +51,10 @@ class Dashboard extends Component {
             case 'DASHBOARD_CREATE_SET_VIEW':
                 return <EditSet editable={true}>
                 </EditSet>;
+            case 'DASHBOARD_MODE1':
+                return <Mode1 setID={this.props.setID} setName={this.props.setName}/>;
+            case 'DASHBOARD_MODE2':
+                return <Mode2 setID={this.props.setID} setName={this.props.setName}/>;
             default:
                 return <div className="text-center"><h2>Error</h2></div>
         }
@@ -59,6 +65,7 @@ const mapStateToProps = state => {
     return {
         currentView: state.dashboard.currentView,
         setID: state.dashboard.setID,
+        setName: state.dashboard.setName,
         errorMessage: state.dashboard.errorMessage,
     }
 };

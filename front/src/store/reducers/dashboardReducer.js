@@ -38,6 +38,20 @@ export const dashboard = (state = defaultState, action) => {
                 setID: null,
                 errorMessage: null,
             };
+        case 'DASHBOARD_MODE1':
+            return {
+                currentView: action.type,
+                setID: state.setID,
+                setName: state.setName,
+                errorMessage: null,
+            };
+        case 'DASHBOARD_MODE2':
+            return {
+                currentView: action.type,
+                setID: state.setID,
+                setName: state.setName,
+                errorMessage: null,
+            };
         case 'DASHBOARD_ERROR':
             return {
                 currentView: state.currentView,

@@ -159,7 +159,7 @@ class Mode2 extends Component {
 
                         :
 
-                        <main className="m-mode-2-main">
+                        <main className="m-mode-2-main m-flex-ctr-cnt">
                             <p>No cards found</p>
                         </main>
                 }

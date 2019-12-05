@@ -7,20 +7,20 @@ import UserSetsView from "../userSetsView/UserSetsView";
  * Komponent zawierający profil użytkownika
  */
 class Dashboard extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
-            sets:[]
+            sets: []
         }
     }
 
-    addState(e){
+    addState(e) {
         e.preventDefault();
-        const{sets} = this.state;
+        const {sets} = this.state;
         const newSet = this.newSet.value;
 
         this.setState({
-            sets:[...this.state.sets, newSet]
+            sets: [...this.state.sets, newSet]
         })
     }
 
@@ -31,9 +31,9 @@ class Dashboard extends Component {
                     <DashboardNavBar>
                     </DashboardNavBar>
                 </div>
-                <div  id="dashDiv">
-                   <UserSetsView>
-                   </UserSetsView>
+                <div id="dashDiv">
+                    <UserSetsView>
+                    </UserSetsView>
                 </div>
             </div>
         );

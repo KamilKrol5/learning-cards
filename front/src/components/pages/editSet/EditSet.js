@@ -20,7 +20,7 @@ class EditSet extends Component {
     addState(e) {
         e.preventDefault();
         let i=this.state.number;
-        const newSet = {id:i,term: null, definition: null};
+        const newSet = {id:i+1,term: null, definition: null};
         this.setState({
             sets: [...this.state.sets, newSet],
             number:i+1
@@ -29,9 +29,12 @@ class EditSet extends Component {
             )
     }
 
-    handleDelete = (term) => {
-        const newSets=this.state.sets.filter(sets => (sets.id !== term));
-        this.setState({sets:newSets});
+    handleDelete = (itemID) => {
+        console.log(itemID);
+        const newSets=this.state.sets.filter(sets => (sets.id !== itemID));
+        this.setState({sets:newSets},function () {
+            console.log(this.state.sets)
+        });
     };
 
     handleChange = (item,k) => {
@@ -41,7 +44,7 @@ class EditSet extends Component {
         this.setState({
             sets: newArr
         },function () {
-            console.log(this.state);
+            console.log(this.state.sets);
         });
     };
 
@@ -55,7 +58,7 @@ class EditSet extends Component {
                 <div className="row">
                     {this.state.sets.map(item => (
                         <div className="col-sm-12">
-                            <EditCard  height={"100px"} onDelete={this.handleDelete}  term={item.term} number={item.id} definition={item.definition} item={item} onItemChange={this.handleChange}></EditCard>
+                            <EditCard  height={"100px"} onDelete={this.handleDelete} key={item.id} term={item.term} number={item.id} definition={item.definition} onItemChange={this.handleChange}></EditCard>
                             <div className="top-buffer"></div>
                         </div>
                     ))}

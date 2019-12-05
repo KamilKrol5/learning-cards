@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import SetCard from "../../common/setCard/SetCard";
 import ActionCard from "../../common/actionCard/ActionCard";
 import {connect} from "react-redux";
+import * as DashboardActions from "../../../store/actions/dashboardActions"
 import API from "../../../utils/api";
 
 class UserSetsView extends Component {
@@ -24,25 +25,35 @@ class UserSetsView extends Component {
         }))
     }
 
-    navigateToEditingSet(setId) {
-        // TODO
-    }
+    navigateToEditingSet = (e, setId) => {
+        e.stopPropagation();
+        console.log("Navigate to edit set action called");
+        this.props.navigateToEditSetView(setId);
+    };
+
+    navigateToCreateSet= () => {
+        console.log("Create new set action called");
+        this.props.navigateToCreateSetView();
+    };
+
+    navigateSetView = (setID) => {
+        console.log("Navigate to set view");
+        this.props.navigateToSetView(setID);
+    };
 
     render() {
         const successfulFetchFromAPI  =
             <div className="d-flex flex-wrap">
                 <ActionCard title="Create new set" action={
-                    () => console.log("Create new set action called")
-                    //    TO DO
-                }>
+                    () => this.navigateToCreateSet()
+                    }>
                 </ActionCard>
 
                 {this.state.sets.map(set => (
                     <SetCard  title={set.name} key={set.id} editAction={
-                        () => {
-                            console.log("Navigate to edit set action called");
-                            this.navigateToEditingSet(set.id);
-                        }
+                        (e) => this.navigateToEditingSet(e,set.id)
+                    } onCardClicked={
+                        () => this.navigateSetView(set.id)
                     }>
                     </SetCard>
                 ))}
@@ -71,7 +82,13 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => {
-    return ({})
+    return ({
+        navigateToSetView: (setId) =>
+            dispatch(DashboardActions.setDashboardSetView(setId)),
+        navigateToEditSetView: (setId) =>
+            dispatch(DashboardActions.setDashboardEditSetView(setId)),
+        navigateToCreateSetView: () => dispatch(DashboardActions.setDashboardCreateSetView())
+    })
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserSetsView);

@@ -37,6 +37,14 @@ export const setDashboardCreateSetView = () => ({
     type: 'DASHBOARD_CREATE_SET_VIEW',
 });
 
+export const setDashboardMode1 = () => ({
+    type: 'DASHBOARD_MODE1',
+});
+
+export const setDashboardMode2 = () => ({
+    type: 'DASHBOARD_MODE2',
+});
+
 /**
  * Show error message
  * @param errorMessage error message or null to reset

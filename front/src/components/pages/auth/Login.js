@@ -42,7 +42,7 @@ class Login extends Component {
 
                         <div id="m-auth-page">
                             <div className="m-auth-page-bg m-flex-ctr-cnt">
-                                <Link to="/" className="m-auth-page-logo">LearningCards</Link>
+                                <Link to="/" className="m-auth-page-logo m-logo">LearningCards</Link>
                             </div>
                             <div className="m-auth-page-form-wrapper m-flex-ctr-cnt">
                                 <div

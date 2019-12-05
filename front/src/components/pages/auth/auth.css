@@ -6,25 +6,8 @@
 }
 
 .m-auth-page-logo {
-    display: inline-block;
-    margin: 0;
-    font-size: 32px;
     max-height: 80px;
-    transition: color .3s;
 }
-
-.m-auth-page-logo,
-.m-auth-page-logo:hover,
-.m-auth-page-logo:active,
-.m-auth-page-logo:link {
-    color: white;
-    text-decoration: none;
-}
-
-.m-auth-page-logo:hover {
-    color: #c4c4c4;
-}
-
 
 .m-auth-page-bg {
     width: 100%;

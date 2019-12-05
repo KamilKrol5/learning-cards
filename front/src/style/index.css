@@ -48,3 +48,22 @@ h1 {
     justify-content: center;
 }
 
+.m-logo {
+    display: inline-block;
+    margin: 0;
+    font-size: 32px;
+    transition: color .3s;
+}
+
+.m-logo,
+.m-logo:hover,
+.m-logo:active,
+.m-logo:link {
+    color: white;
+    text-decoration: none;
+}
+
+.m-logo:hover {
+    color: #c4c4c4;
+}
+

@@ -1,4 +1,4 @@
-from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView, CreateAPIView
+from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView, CreateAPIView, ListAPIView
 from learning_cards import models
 from . import serializers
 from rest_framework import status
@@ -48,7 +48,7 @@ class LearningSetRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
             raise NotAcceptable("Cannot remove sets which belong to other users")
 
 
-class ItemsListAPIView(ListCreateAPIView):
+class ItemsListAPIView(ListAPIView):
     serializer_class = serializers.ItemSerializer
 
     def get_queryset(self):
@@ -59,6 +59,10 @@ class ItemsListAPIView(ListCreateAPIView):
         else:
             queryset = queryset.filter(learning_set_id=set_id)
             return queryset
+
+
+class ItemsCreateAPIView(CreateAPIView):
+    serializer_class = serializers.ItemListSerializer
 
 
 class ItemRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):

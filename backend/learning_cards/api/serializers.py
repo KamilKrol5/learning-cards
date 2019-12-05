@@ -35,3 +35,9 @@ class ItemSerializer(serializers.ModelSerializer):
     class Meta:
         model = Item
         fields = ['id', 'term', 'definition', 'learning_set_id']
+
+
+class ItemListSerializer:
+    def __new__(cls, *args, **kwargs):
+        kwargs['many'] = True
+        return ItemSerializer(*args, **kwargs)

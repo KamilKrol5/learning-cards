@@ -12,7 +12,8 @@
 }
 
 .m-dashboard-nav-logo {
-    font-size: 30px
+    font-size: 30px;
+    transition: color .3s;
 }
 
 .m-dashboard-nav-logo,
@@ -25,6 +26,17 @@
 
 .m-dashboard-nav-logo:hover {
     color: #646464;
+}
+
+.m-dashboard-nav-link {
+    text-align: center;
+    padding: 8px 0;
+    width: 100%;
+    transition: background-color .2s;
+}
+
+.m-dashboard-nav-link:hover {
+    background-color: #cbcbcb;
 }
 
 .m-width-100 {

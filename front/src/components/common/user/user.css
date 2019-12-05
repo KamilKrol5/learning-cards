@@ -1,0 +1,81 @@
+.m-user-info-wrapper {
+    height: 100%;
+    width: 100%;
+    z-index: 1000;
+}
+
+.m-user-info {
+    /*normally*/
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.m-user-info-msg-wrapper {
+    height: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.m-user-info-msg {
+    transition: height .3s;
+    width: 100%;
+    background-color: #d31155;
+    overflow: hidden;
+    height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.m-user-logout-btn {
+    border-radius: 15px;
+    font-size: 20px;
+    border: 2px solid black;
+    padding: 5px 15px;
+    transition: background-color .3s;
+}
+
+.m-user-logout-btn:hover {
+    background-color: #bd104d;
+}
+
+.m-user-info-main {
+    height: 60%;
+    display: flex;
+    background-color: #b3b3b3;
+    transition: background-color .3s;
+}
+
+.m-user-info-main:hover {
+    background-color: #c4c4c4;
+
+}
+
+.m-user-info-icon {
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.m-user-info-name {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.m-user-info-name-p {
+    margin: 0;
+    font-size: 40px;
+    color: #343434;
+}
+
+.m-user-info-icon-svg {
+    height: 100%;
+}
+

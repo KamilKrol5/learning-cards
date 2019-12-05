@@ -6,6 +6,7 @@ import {withFormik} from "formik";
 import * as Yup from "yup";
 import {Link} from "react-router-dom";
 import './auth.css';
+import '../../../style/error.css'
 
 const fields = [
     {name: 'username', type: '', placeholder: 'username'},
@@ -28,9 +29,9 @@ class Register extends Component {
         const registerPage = <div className="m-auth-page-form-wrapper">
             <div
                 style={{height: this.props.auth.registerErrorMessage && "45px"}}
-                className="m-auth-page-login-error"
+                className="m-error-popup"
             >
-                <p className="m-auth-page-login-error-p">{this.props.auth.registerErrorMessage}</p>
+                <p className="m-error-popup-p">{this.props.auth.registerErrorMessage}</p>
             </div>
             <form className="m-auth-page-form" method="post" onSubmit={e => {
                 this.props.resetState();

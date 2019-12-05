@@ -1,10 +1,11 @@
 import API from '../../utils/api'
 const CONNECTION_TO_SERVER_LOST_MESSAGE = "Connection to server lost";
 
-export const loginSuccessful = (refreshToken, accessToken) => ({
+export const loginSuccessful = (refreshToken, accessToken, username) => ({
     type: 'LOGIN_SUCCESSFUL',
     refreshToken,
     accessToken,
+    username,
 });
 
 export const loginError = (errorContent) => ({
@@ -25,11 +26,15 @@ export const resetState = () => ({
     type: 'RESET_STATE',
 });
 
+export const logOut = () => ({
+    type: 'LOG_OUT',
+});
+
 export const loginAPIcall = (username, pass) => (dispatch) => {
     API.login(username, pass)
         .then(response => {
             console.log(`DEBUG: Login successful, response: ${JSON.stringify(response)}`);
-            dispatch(loginSuccessful(response.data.refresh, response.data.access))
+            dispatch(loginSuccessful(response.data.refresh, response.data.access, username))
         })
         .catch(error => {
             console.log(`DEBUG: Login error, response: ${JSON.stringify(error)}`);

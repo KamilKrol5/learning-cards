@@ -1,0 +1,114 @@
+.m-mode-2 {
+    /*for dev purposes only*/
+    /*width: 900px;*/
+    /*height: 600px;*/
+
+    /*normally*/
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.m-mode-2-header {
+    height: 20%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.m-mode-2-header-title {
+    font-size: 35px;
+}
+
+
+
+.m-mode-2-main {
+    height: 70%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.m-mode-2-card-wrapper {
+    height: 90%;
+    width: 80%;
+}
+
+
+.m-mode-2-main-right{
+    height: 10%;
+    width: 10%;
+}
+
+.m-mode-2-main-left:hover, .m-mode-2-main-right:hover {
+}
+
+
+.m-mode-2-main-left, .m-mode-2-main-middle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.m-button-skip{
+    position: absolute;
+    background:none;
+    border:none;
+    cursor: pointer;
+    width: fit-content;
+    height: fit-content;
+    top:26%;
+    right: 30%;
+    color:dodgerblue;
+    border-radius: 20px;
+    font-size: 15px;
+}
+.m-button-skip:hover{
+    color: gold;
+}
+.m-button-answer{
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    padding: 20px 60px;
+
+    text-transform: uppercase;
+    border-radius: 10px;
+    display: inline-block;
+    bottom:27%;
+    right: 30%;
+    background-color: dodgerblue;
+    color: #fcfcfc;
+}
+.m-button-answer:hover{
+    color: #272727;
+    background-color: gold;
+}
+.m-button-answer:checked{
+
+}
+
+
+.m-mode-2-main-middle {
+    height: 100%;
+    width: 60%;
+}
+
+
+
+.m-mode-2-footer {
+    height: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.m-mode-2-footer-ctr {
+    font-size: 20px;
+}

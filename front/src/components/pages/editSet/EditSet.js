@@ -10,27 +10,43 @@ class EditSet extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            id: null,
             sets: []
         }
     }
 
     addState(e) {
         e.preventDefault();
-        const {sets} = this.state;
         const newSet = {term: null, definition: null};
-
         this.setState({
             sets: [...this.state.sets, newSet]
         })
     }
 
+    handleDelete = (term) => {
+        const newSets=this.state.sets.filter(sets => (sets !== term));
+        this.setState({sets:newSets});
+    };
+
+    handleChange = (item) => {
+
+        this.setState({
+            sets: [...this.state.sets, item]
+        });
+        // console.log(this.state)
+        console.log(item)
+    };
+
     render() {
         return (
             <div className="container">
-                <div className="row top-buffer">
+                <div className="m-title d-flex flex-row mb-4">
+                    <h1 className="mt-5">{this.state.id}</h1>
+                    <button type="button" className="btn btn-primary btn-lg offset-11 col-sm-1 mb-5 mt-3">Save</button>
+                </div>
+                <div className="row">
                     {this.state.sets.map(item => (
-                        <div className="col-sm-12"><EditCard height={"100px"} term={"hehe"} definition={"xd"} key={item}></EditCard>
+                        <div className="col-sm-12">
+                            <EditCard  height={"100px"} onDelete={this.handleDelete} term={null} definition={null} item={item} onItemChange={this.handleChange}></EditCard>
                             <div className="top-buffer"></div>
                         </div>
                     ))}
@@ -38,7 +54,7 @@ class EditSet extends Component {
                         <form onSubmit={(e) => {
                             this.addState(e)
                         }}>
-                            <button>AddState</button>
+                            <button className="btn btn-primary btn-lg offset-5 col-sm-2 mt-4 mb-5" >ADD</button>
                         </form>
                     </div>
                 </div>

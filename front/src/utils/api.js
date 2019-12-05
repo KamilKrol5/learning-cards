@@ -94,6 +94,50 @@ const API = {
             timeout: apiCallTimeout,
         })
     },
+
+    addItem: (itemId, itemTerm, itemDefinition, itemSetId, token) => {
+        return apiServer({
+            url: `/api/items/`,
+            method: "post",
+            headers: {
+                Authorization: `Bearer ${token}`
+            },
+            data: {
+                "term": itemTerm,
+                "definition": itemDefinition,
+                "learning_set_id": itemSetId
+            },
+            timeout: apiCallTimeout,
+        })
+    },
+
+    updateItem: (itemId, itemTerm, itemDefinition, itemSetId, token) => {
+        return apiServer({
+            url: `/api/items/${itemId}`,
+            method: "patch",
+            headers: {
+                Authorization: `Bearer ${token}`
+            },
+            data: {
+                "term": itemTerm,
+                "definition": itemDefinition,
+                "learning_set_id": itemSetId
+            },
+            timeout: apiCallTimeout,
+        })
+    },
+
+    removeItem: (itemId, token) => {
+        return apiServer({
+            url: `/api/items/${itemId}`,
+            method: "delete",
+            headers: {
+                Authorization: `Bearer ${token}`
+            },
+            data: {},
+            timeout: apiCallTimeout,
+        })
+    }
 };
 
 export default API;

@@ -1,26 +1,39 @@
 import React, {Component} from 'react';
-import {Link} from "react-router-dom";
 import './dashboardNavBar.css'
+import {Link} from "react-router-dom";
+import UserInfo from "../user/UserInfo";
 
 class DashboardNavBar extends Component {
     render() {
         return (
-            <nav className="navbar navbar-light bg-light navbar-expand-md h-100 p-1 m-sidebar">
-                <button className="navbar-toggler navbar-light" type="button" data-toggle="collapse"
-                        data-target="#mainmenu"><span className="navbar-toggler-icon float-left"></span></button>
-                <div className="collapse navbar-collapse m-sidebar bg-light" id="mainmenu">
-                    <Link className="m-nav-logo text-dark nav-link mb-5" to="/">LearningCards</Link>
-                    <ul className="nav flex-column bg-white mb-0">
+            <nav className={"m-dashboard-nav-wrapper"}>
+                <div className="m-dashboard-nav-logo-wrapper m-flex-ctr-cnt">
+                    <Link className="m-dashboard-nav-logo" to={"/"}>LearningCards</Link>
+                </div>
+                <div className="m-dashboard-nav-links">
+                    <ul className="nav flex-column bg-white mb-0 m-width-100">
                         <li className="nav-item">
-                            <Link className="nav-link text-dark font-italic bg-light" to="/">Zestawy</Link>
+                            <Link
+                                className="nav-link text-dark bg-light text-center m-width-100"
+                                to="/"
+                            >
+                                Zestawy
+                            </Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link text-dark font-italic bg-light" to="/">Tryb nauki 1</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link text-dark font-italic bg-light" to="/">Tryb nauki 2</Link>
+                            <Link
+                                className="nav-link text-dark bg-light text-center m-width-100"
+                                to="/"
+                            >
+                                Preferencje
+                            </Link>
                         </li>
                     </ul>
+                </div>
+                <div className="m-dashboard-nav-spacer m-flex-ctr-cnt">
+                    <div className="m-dashboard-nav-user-wrapper">
+                        <UserInfo/>
+                    </div>
                 </div>
             </nav>
         );

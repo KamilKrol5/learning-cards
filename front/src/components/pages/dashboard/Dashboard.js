@@ -7,9 +7,7 @@ import * as DashboardActions from "../../../store/actions/dashboardActions";
 import ChooseModeView from "../../common/chooseModeView/ChooseModeView";
 import EditSet from "../editSet/EditSet";
 
-/**
- * Komponent zawierający profil użytkownika
- */
+
 class Dashboard extends Component {
     constructor(props) {
         super(props);
@@ -21,13 +19,12 @@ class Dashboard extends Component {
 
     render() {
         return (
-            <div id="main-div">
-                <div id="navDiv">
+            <div className="m-dashboard-wrapper m-flex-ctr-cnt">
+                <div className="m-dashboard-nav">
                     <DashboardNavBar>
                     </DashboardNavBar>
                 </div>
-
-                <div  id="dashDiv">
+                <div className="m-dashboard-content">
                     {this.drawViewAccordingToState()}
                 </div>
             </div>

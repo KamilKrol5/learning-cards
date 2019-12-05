@@ -57,7 +57,7 @@ class UserInfo extends Component {
                                 {UserIcon.userIcon}
                             </div>
                             <div className="m-user-info-name">
-                                <p className="m-user-info-name-p">jozef</p>
+                                <p className="m-user-info-name-p">{this.props.auth.username}</p>
                             </div>
                         </div>
                     </div>

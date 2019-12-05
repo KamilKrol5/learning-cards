@@ -1,28 +1,48 @@
-.m-sidebar {
-    width: fit-content;
-    position: fixed;
+.m-dashboard-nav-wrapper {
+    width: 100%;
     height: 100%;
-    top: 0;
-    left: 0;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
-    transition: all 0.4s;
+    background-color: #f8f9fa;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: stretch;
 }
 
-.m-nav-link {
-    margin: 5px;
-    padding: 10px;
+.m-dashboard-nav-logo-wrapper {
     width: 100%;
-    display: inline-block;
-    color: black;
+    height: 10%;
+}
+
+.m-dashboard-nav-logo {
+    font-size: 30px
+}
+
+.m-dashboard-nav-logo,
+.m-dashboard-nav-logo:hover,
+.m-dashboard-nav-logo:active,
+.m-dashboard-nav-logo:link {
+    color: #343434;
     text-decoration: none;
 }
 
-.m-nav-logo, .m-nav-logo:hover {
-    color: black;
-    font-size: 30px;
-    /*float: left*/
+.m-dashboard-nav-logo:hover {
+    color: #646464;
+}
+
+.m-width-100 {
+    width: 100%;
+}
+
+.m-dashboard-nav-spacer {
+    width: 100%;
+    height: 15%;
+}
+
+.m-dashboard-nav-links {
+    width: 100%;
+    height: 75%;
+}
+
+.m-dashboard-nav-user-wrapper {
+    width: 80%;
+    border-radius: 10px;
+    overflow: hidden;
 }

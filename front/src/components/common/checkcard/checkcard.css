@@ -22,19 +22,3 @@
     padding: 5px;
     text-align: center;
 }
-
-.m-card-check-btn {
-    background-color: #dddddd;
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
-    padding: 10px 25px;
-    border-radius: 10px;
-    transition: background-color .3s;
-}
-
-.m-card-check-btn:hover {
-    background-color: #eeeeee;
-}
-
-.m-card-check-btn:active {
-    background-color: #777777;
-}

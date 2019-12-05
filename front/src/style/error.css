@@ -12,6 +12,11 @@
 }
 
 .m-error-popup-p {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
     color: #fff;
     font-size: 20px;
+    margin: 0;
+    padding: 0 15px;
 }

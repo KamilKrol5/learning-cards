@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import '../../../style/card.css';
 import './checkcard.css';
+import '../../../style/button.css';
 
 class CheckCard extends Component {
     constructor(props) {
@@ -8,8 +9,10 @@ class CheckCard extends Component {
         this.state = {
             inputValue: '',
             color: null,
-        }
+            mutateStateDone: true,
+        };
     }
+
 
     render() {
         return (
@@ -36,7 +39,7 @@ class CheckCard extends Component {
                 <div className="m-card-line"/>
                 <div className="m-card-check-wrapper m-card-part">
                     <div
-                        className="m-card-check-btn no-select"
+                        className="m-btn-1-box-sh no-select"
                         onClick={this.checkAnswer}
                     >
                         Check
@@ -59,25 +62,35 @@ class CheckCard extends Component {
     };
 
     sendResult = (result) => {
-        this.props.checkResult(result);
+        this.props.checkResult(this.unlock, this.props.id, result);
     };
 
+    unlock = () => {
+        this.setState({
+            mutateStateDone: true,
+        })
+    };
 
     checkAnswer = () => {
-        const self = this;
-
-        if (this.state.inputValue === this.props.definition) {
-            self.changeColor('#77ff6b');
-            setTimeout(function() {
-                self.changeColor(null);
-                self.sendResult(true);
-            }, 400);
-        } else {
-            self.changeColor('#ff444b');
-            setTimeout(function() {
-                self.changeColor(null);
-                self.sendResult(false);
-            }, 400);
+        if (this.state.mutateStateDone) {
+            const self = this;
+            this.setState({
+                mutateStateDone: false
+            }, () => {
+                if (this.state.inputValue === this.props.definition) {
+                    self.changeColor('#77ff6b');
+                    setTimeout(function () {
+                        self.changeColor(null);
+                        self.sendResult(true);
+                    }, 400);
+                } else {
+                    self.changeColor('#ff444b');
+                    setTimeout(function () {
+                        self.changeColor(null);
+                        self.sendResult(false);
+                    }, 400);
+                }
+            });
         }
     }
 }

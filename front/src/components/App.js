@@ -16,7 +16,7 @@ import FlipCard from "./common/flipcard/FlipCard";
 import Card from "./common/card/Card";
 import UserInfo from "./common/user/UserInfo";
 import Mode2 from "./common/mode2/Mode2";
-import SetCard from "./common/setCard/SetCard";
+import UserSetsView from "./pages/userSetsView/UserSetsView";
 
 //other stuff
 
@@ -169,6 +169,19 @@ function App() {
                         <PageFlexWrapper>
                             <Dashboard
                             />
+                        </PageFlexWrapper>
+                    )
+                }
+            />
+
+
+            <Route
+                exact={true}
+                path="/user-sets"
+                render={
+                    () => (
+                        <PageFlexWrapper>
+                            <UserSetsView/>
                         </PageFlexWrapper>
                     )
                 }

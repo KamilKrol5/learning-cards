@@ -4,23 +4,14 @@ import './setcard.css';
 class SetCard extends Component {
     render() {
         return (
-            <div className="m-card"
-                 style={
-                     {
-                         title: this.props.title,
-                         height:this.props.height
-                     }
-                 }
-            >
-                <div className="m-card-term">
-                    <p>{this.props.title}</p>
-                    <button onClick={this.nextElement} className="m-button-edit">Edit</button>
-                    <button type="button" className="close m-button" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div className="m-card-line"/>
-                <div className="m-card-definition">
+            <div className="col-sm-6 mb-4">
+                <div className="h-100 card bg-light" onClick={this.props.action}>
+                    <a href="#" className="card-link text-dark">
+                        <div className=" card-body">
+                            <a className="float-right btn-sm btn-light" onClick={this.props.editAction}>Edit</a>
+                            <h5 className="card-title">{this.props.title}</h5>
+                        </div>
+                    </a>
                 </div>
             </div>
         );

@@ -25,10 +25,10 @@ class UserSetsView extends Component {
         }))
     }
 
-    navigateToEditingSet = (e, setId) => {
+    navigateToEditingSet = (e, setId, setName) => {
         e.stopPropagation();
         console.log("Navigate to edit set action called");
-        this.props.navigateToEditSetView(setId);
+        this.props.navigateToEditSetView(setId,setName);
     };
 
     navigateToCreateSet = () => {
@@ -36,9 +36,9 @@ class UserSetsView extends Component {
         this.props.navigateToCreateSetView();
     };
 
-    navigateSetView = (setID) => {
+    navigateSetView = (setID, setName) => {
         console.log("Navigate to set view");
-        this.props.navigateToSetView(setID);
+        this.props.navigateToSetView(setID, setName);
     };
 
     render() {
@@ -50,10 +50,10 @@ class UserSetsView extends Component {
                 </ActionCard>
 
                 {this.state.sets.map(set => (
-                    <SetCard title={set.name} key={set.id} editAction={
-                        (e) => this.navigateToEditingSet(e, set.id)
+                    <SetCard  title={set.name} key={set.id} editAction={
+                        (e) => this.navigateToEditingSet(e,set.id, set.name)
                     } onCardClicked={
-                        () => this.navigateSetView(set.id)
+                        () => this.navigateSetView(set.id, set.name)
                     }>
                     </SetCard>
                 ))}
@@ -83,10 +83,10 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return ({
-        navigateToSetView: (setId) =>
-            dispatch(DashboardActions.setDashboardSetView(setId)),
-        navigateToEditSetView: (setId) =>
-            dispatch(DashboardActions.setDashboardEditSetView(setId)),
+        navigateToSetView: (setId, setName) =>
+            dispatch(DashboardActions.setDashboardSetView(setId, setName)),
+        navigateToEditSetView: (setId, setName) =>
+            dispatch(DashboardActions.setDashboardEditSetView(setId, setName)),
         navigateToCreateSetView: () => dispatch(DashboardActions.setDashboardCreateSetView())
     })
 };

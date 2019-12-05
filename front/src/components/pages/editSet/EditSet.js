@@ -1,25 +1,37 @@
 import React, {Component} from 'react';
 import './editset.css'
 import EditCard from "../../common/editCard/EditCard";
+import API from "../../../utils/api";
+import {connect} from "react-redux";
+import * as DashboardActions from "../../../store/actions/dashboardActions";
 
 class EditSet extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            id: this.props.id,
-            number: this.props.number,
+            editable: this.props.editable,
+            setName: "h",
             items: []
         }
     }
 
+    componentDidMount() {
+        API.getSetItems(this.props.setId, this.props.token).then(
+            response => {
+                this.setState({
+                    items: response.data
+                })
+            }
+        ).catch(error => this.props.setErrorState())
+    }
+
     addState(e) {
         e.preventDefault();
-        let i = this.state.number;
-        const newSet = {id: i + 1, term: null, definition: null};
+        let i = Math.max(...this.state.items.map(i => i.id))+1;
+        const newItem = {id: i, term: null, definition: null};
         this.setState({
-                items: [...this.state.items, newSet],
-                number: i + 1
+                items: [...this.state.items, newItem],
             }, function () {
             }
         )
@@ -47,27 +59,34 @@ class EditSet extends Component {
     render() {
         return (
             <div className="container">
-                <div className="m-title d-flex flex-row mb-4">
-                    <h1 className="mt-5">{this.state.id}</h1>
-                    <button type="button" className="btn btn-primary btn-lg offset-11 col-sm-1 mb-5 mt-3">Save</button>
+                <div className="mb-4 d-flex justify-content-between" >
+                    <h1 className="mt-5">{this.props.setName}</h1>
+                    { (this.state.editable) &&
+                    <button type="button" className="btn btn-primary btn-lg col-sm-1 mb-5 mt-3">Save</button>
+                    }
                 </div>
                 <div className="row">
-                    {this.state.items.map(item => (
+                    {this.state.items.length !== 0 ? this.state.items.map(item => (
                         <div className="col-sm-12">
                             <EditCard height={"100px"} onDelete={this.handleDelete} key={item.id} term={item.term}
-                                      number={item.id} definition={item.definition}
+                                      definition={item.definition} number={item.id} editable={this.props.editable}
                                       onItemChange={this.handleChange}>
                             </EditCard>
                             <div className="top-buffer">
                             </div>
                         </div>
-                    ))}
+                    )) :
+                    <div className="text-center"><h3>The set is empty</h3></div>
+                    }
+
                     <div className="col-sm-12">
-                        <form onSubmit={(e) => {
-                            this.addState(e)
-                        }}>
-                            <button className="btn btn-primary btn-lg offset-5 col-sm-2 mt-4 mb-5">ADD</button>
-                        </form>
+                        { (this.state.editable) &&
+                            <form onSubmit={(e) => {
+                                this.addState(e)
+                            }}>
+                                <button className="btn btn-primary btn-lg offset-5 col-sm-2 mt-4 mb-5">ADD</button>
+                            </form>
+                        }
                     </div>
                 </div>
             </div>
@@ -76,4 +95,18 @@ class EditSet extends Component {
     }
 }
 
-export default EditSet;
+const mapStateToProps = state => {
+    return {
+        token: state.auth.accessToken,
+        setId: state.dashboard.setID,
+        setName: state.dashboard.setName
+    }
+};
+
+const mapDispatchToProps = dispatch => {
+    return ({
+        setErrorState: () => dispatch(DashboardActions.setDashboardError())
+    })
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(EditSet);

@@ -2,6 +2,10 @@ import React, {Component} from 'react';
 import DashboardNavBar from "../../common/dashboardNavbar/DashboardNavBar";
 import './dashboard.css'
 import UserSetsView from "../userSetsView/UserSetsView";
+import {connect} from "react-redux";
+import * as DashboardActions from "../../../store/actions/dashboardActions";
+import ChooseModeView from "../../common/chooseModeView/ChooseModeView";
+import EditSet from "../editSet/EditSet";
 
 /**
  * Komponent zawierający profil użytkownika
@@ -9,19 +13,10 @@ import UserSetsView from "../userSetsView/UserSetsView";
 class Dashboard extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            sets: []
-        }
     }
 
-    addState(e) {
-        e.preventDefault();
-        const {sets} = this.state;
-        const newSet = this.newSet.value;
-
-        this.setState({
-            sets: [...this.state.sets, newSet]
-        })
+    componentDidMount() {
+        // this.props.setDefaultState();
     }
 
     render() {
@@ -31,13 +26,51 @@ class Dashboard extends Component {
                     <DashboardNavBar>
                     </DashboardNavBar>
                 </div>
-                <div id="dashDiv">
-                    <UserSetsView>
-                    </UserSetsView>
+
+                <div  id="dashDiv">
+                    {this.drawViewAccordingToState()}
                 </div>
             </div>
         );
     }
+
+    drawViewAccordingToState() {
+        switch (this.props.currentView) {
+            case 'DASHBOARD_USER_SET_VIEW':
+                return <UserSetsView>
+                </UserSetsView>;
+            case 'DASHBOARD_EDIT_SET_VIEW':
+                return <EditSet editable={true}>
+                </EditSet>;
+            case 'DASHBOARD_SET_VIEW':
+                return <div>
+                    <ChooseModeView>
+                    </ChooseModeView>
+                    <EditSet editable={false}>
+                    </EditSet>
+                </div>;
+            case 'DASHBOARD_CREATE_SET_VIEW':
+                return <EditSet editable={true}>
+                </EditSet>;
+            default:
+                return <div className="text-center"><h2>Error</h2></div>
+        }
+    }
 }
 
-export default Dashboard;
+const mapStateToProps = state => {
+    return {
+        currentView: state.dashboard.currentView,
+        setID: state.dashboard.setID,
+        errorMessage: state.dashboard.errorMessage,
+    }
+};
+
+const mapDispatchToProps = dispatch => {
+    return ({
+        setDefaultState: () => dispatch(DashboardActions.setDashboardUserSetView())
+    })
+};
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);

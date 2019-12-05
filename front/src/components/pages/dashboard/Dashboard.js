@@ -31,7 +31,7 @@ class Dashboard extends Component {
                 <div id="navDiv">
                     <DashboardNavBar></DashboardNavBar>
                 </div>
-                <EditSet></EditSet>
+                <EditSet id={"tytul"} number={1}></EditSet>
             </div>
         );
     }

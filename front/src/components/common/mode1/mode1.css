@@ -21,6 +21,7 @@
 }
 
 .m-mode-1-header-title {
+    margin-bottom: 0;
     font-size: 35px;
 }
 
@@ -30,6 +31,8 @@
     height: 70%;
     width: 100%;
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .m-mode-1-card-wrapper {

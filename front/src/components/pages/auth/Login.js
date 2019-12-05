@@ -10,6 +10,7 @@ import * as AuthActions from '../../../store/actions/authActions';
 //css
 import './auth.css';
 import {Link} from "react-router-dom";
+import '../../../style/error.css'
 
 const fields = [
     {name: 'username', type: 'text', placeholder: 'username'},
@@ -22,7 +23,7 @@ const fields = [
 class Login extends Component {
 
     componentDidMount() {
-        this.props.resetErrorMessage()
+        this.props.resetState()
     }
 
     render() {
@@ -34,9 +35,9 @@ class Login extends Component {
                 <div className="m-auth-page-form-wrapper">
                     <div
                         style={{height: this.props.auth.loginErrorMessage && "45px"}}
-                        className="m-auth-page-login-error"
+                        className="m-error-popup"
                     >
-                        <p className="m-auth-page-login-error-p">{this.props.auth.loginErrorMessage}</p>
+                        <p className="m-error-popup-p">{this.props.auth.loginErrorMessage}</p>
                     </div>
                     <form className="m-auth-page-form" method="post" onSubmit={e => {
                         e.preventDefault();
@@ -76,8 +77,8 @@ const mapDispatchToProps = dispatch => {
         loginAPIcall: (email, password) => {
             dispatch(AuthActions.loginAPIcall(email, password))
         },
-        resetErrorMessage: () => {
-            dispatch(AuthActions.resetErrorMessage())
+        resetState: () => {
+            dispatch(AuthActions.resetState())
         }
     })
 };

@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
 import DashboardNavBar from "../../common/dashboardNavbar/DashboardNavBar";
 import './dashboard.css'
-import SetCard from "../../common/setCard/SetCard";
-import SetsView from "../SetsView/SetsView";
-import EditSet from "../editSet/EditSet";
+import UserSetsView from "../userSetsView/UserSetsView";
+
 /**
  * Komponent zawierający profil użytkownika
  */
@@ -29,9 +28,13 @@ class Dashboard extends Component {
         return (
             <div id="main-div">
                 <div id="navDiv">
-                    <DashboardNavBar></DashboardNavBar>
+                    <DashboardNavBar>
+                    </DashboardNavBar>
                 </div>
-                <EditSet id={"tytul"} number={1}></EditSet>
+                <div  id="dashDiv">
+                   <UserSetsView>
+                   </UserSetsView>
+                </div>
             </div>
         );
     }

@@ -186,7 +186,29 @@
     }
     ```
     To make a request to this API endpoint, an access token is not required.
-8. The rest of endpoints  
+8. Adding new items  
+    Endpoint for adding items is ``<api address>/api/items/add/``.
+    Body of the request should be a list of items with fields `term`, `definition`, `learning_set_id`:
+    ```
+    [
+        {
+            "term": "<term>",
+            "definition": "<definition>",
+            "learning_set_id": <learning set id>
+        },
+        {
+            "term": "<term>",
+            "definition": "<definition>",
+            "learning_set_id": <learning set id>
+        }
+        ...
+    ]
+    ```
+    This will create the items if all of them are valid,
+    and return a list containing them (same format as the acquire endpoint) with status 201.  
+    If there is an error, the response (with status 400) will contain a list of errors,
+    and no items will be created.
+9. The rest of endpoints  
     Since project is no longer maintained, the rest of endpoints won't be described in this file.
     
 

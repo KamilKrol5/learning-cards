@@ -14,8 +14,9 @@ import NavBar from "./common/navbar/NavBar";
 import Mode1 from "./common/mode1/Mode1";
 import FlipCard from "./common/flipcard/FlipCard";
 import Card from "./common/card/Card";
+import UserInfo from "./common/user/UserInfo";
 import Mode2 from "./common/mode2/Mode2";
-import SetCard from "./common/setCard/SetCard";
+import UserSetsView from "./pages/userSetsView/UserSetsView";
 
 //other stuff
 
@@ -78,6 +79,18 @@ function App() {
 
             <Route
                 exact={true}
+                path="/user"
+                render={
+                    () => (
+                        <PageFlexWrapper>
+                            <UserInfo/>
+                        </PageFlexWrapper>
+                    )
+                }
+            />
+
+            <Route
+                exact={true}
                 path="/profile"
                 render={
                     () => (
@@ -95,6 +108,8 @@ function App() {
                     () => (
                         <PageFlexWrapper>
                             <Mode1
+                                setID={5}
+                                setName={"Moje słówka"}
                             />
                         </PageFlexWrapper>
                     )
@@ -106,8 +121,7 @@ function App() {
                 render={
                     () => (
                         <PageFlexWrapper>
-                            <Mode2
-                            />
+                            <Mode2/>
                         </PageFlexWrapper>
                     )
                 }
@@ -155,6 +169,19 @@ function App() {
                         <PageFlexWrapper>
                             <Dashboard
                             />
+                        </PageFlexWrapper>
+                    )
+                }
+            />
+
+
+            <Route
+                exact={true}
+                path="/user-sets"
+                render={
+                    () => (
+                        <PageFlexWrapper>
+                            <UserSetsView/>
                         </PageFlexWrapper>
                     )
                 }

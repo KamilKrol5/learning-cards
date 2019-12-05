@@ -32,22 +32,26 @@
     position: relative;
 }
 
-.m-auth-page-login-error {
-    width: 100%;
-    height: 0;
-    position: absolute;
-    left: 0;
-    top: 0;
-    background-color: #d31155;
+.m-auth-page-reg-ok {
     display: flex;
     align-items: center;
-    justify-content: center;
-    transition: height .5s;
+    flex-direction: column;
 }
 
-.m-auth-page-login-error-p {
-    color: #fff;
+.m-auth-page-reg-ok-msg {
+    display: flex;
+    align-items: center;
+}
+
+.m-auth-page-reg-ok-msg-img {
+    margin: 0 10px;
+    width: 35px;
+    height: 35px;
+}
+
+.m-auth-page-reg-ok-msg-p {
     font-size: 20px;
+    margin: 15px;
 }
 
 .m-auth-page-form {

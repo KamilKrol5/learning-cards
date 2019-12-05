@@ -1,0 +1,15 @@
+.m-btn-1-box-sh {
+    background-color: #dddddd;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+    padding: 10px 25px;
+    border-radius: 10px;
+    transition: background-color .3s;
+}
+
+.m-btn-1-box-sh:hover {
+    background-color: #eeeeee;
+}
+
+.m-btn-1-box-sh:active {
+    background-color: #777777;
+}

@@ -6,7 +6,7 @@ import API from "../../../utils/api";
 import '../../../style/error.css';
 
 /**
- * Mode1 has to receive setID in property!
+ * Mode1 has to receive setID in property!!!
  * Mode1 uses Redux to get accessToken from store
  */
 class Mode1 extends Component {

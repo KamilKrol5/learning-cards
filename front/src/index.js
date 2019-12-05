@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './style/index.css';
 /*
  * Jak potrzeba bootstrap, odkomentujcie
  */

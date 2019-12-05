@@ -17,6 +17,7 @@ import Card from "./common/card/Card";
 import UserInfo from "./common/user/UserInfo";
 import Mode2 from "./common/mode2/Mode2";
 import UserSetsView from "./pages/userSetsView/UserSetsView";
+import CheckCard from "./common/checkcard/CheckCard";
 
 //other stuff
 
@@ -24,6 +25,7 @@ import UserSetsView from "./pages/userSetsView/UserSetsView";
  * Główny komponent aplikacji
  */
 function App() {
+
     return (
 
         //Router w zależności od ścieżki na której aktualnie się znajdujemy renderuje odpowiednie komponenty
@@ -121,7 +123,28 @@ function App() {
                 render={
                     () => (
                         <PageFlexWrapper>
-                            <Mode2/>
+                            <Mode2
+                                setName={"Mode 2 dev"}
+                                setID={5}
+                            />
+                        </PageFlexWrapper>
+                    )
+                }
+            />
+
+            <Route
+                exact={true}
+                path="/checkcard"
+                render={
+                    () => (
+                        <PageFlexWrapper>
+                            <CheckCard
+                                term={"term"}
+                                definition={"definion"}
+                                checkResult={(value) => {
+                                    console.log(value)
+                                }}
+                            />
                         </PageFlexWrapper>
                     )
                 }

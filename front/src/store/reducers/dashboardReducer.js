@@ -24,6 +24,18 @@ export const dashboard = (state = defaultState, action) => {
                 setID: action.setID,
                 errorMessage: null,
             };
+        case 'DASHBOARD_EDIT_SET_VIEW':
+            return {
+                currentView: action.type,
+                setID: action.setID,
+                errorMessage: null,
+            };
+        case 'DASHBOARD_CREATE_SET_VIEW':
+            return {
+                currentView: action.type,
+                setID: null,
+                errorMessage: null,
+            };
         case 'DASHBOARD_ERROR':
             return {
                 currentView: state.currentView,

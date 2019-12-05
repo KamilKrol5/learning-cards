@@ -21,6 +21,21 @@ export const setDashboardSetView = (setID) => ({
 });
 
 /**
+ *  Show view where a set can be edited
+ */
+export const setDashboardEditSetView = (setID) => ({
+    setID,
+    type: 'DASHBOARD_EDIT_SET_VIEW',
+});
+
+/**
+ *  Show view where a set can be created
+ */
+export const setDashboardCreateSetView = () => ({
+    type: 'DASHBOARD_CREATE_SET_VIEW',
+});
+
+/**
  * Show error message
  * @param errorMessage error message or null to reset
  */

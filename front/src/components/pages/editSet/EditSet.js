@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './editset.css'
 import SetCard from "../../common/setCard/SetCard";
 import EditCard from "../../common/editCard/EditCard";
+import update from 'react-addons-update'; // ES6
 
 /**
  * Komponent zawierający profil użytkownika
@@ -10,30 +11,38 @@ class EditSet extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            id: this.props.id,
+            number:this.props.number,
             sets: []
         }
     }
 
     addState(e) {
         e.preventDefault();
-        const newSet = {term: null, definition: null};
+        let i=this.state.number;
+        const newSet = {id:i,term: null, definition: null};
         this.setState({
-            sets: [...this.state.sets, newSet]
-        })
+            sets: [...this.state.sets, newSet],
+            number:i+1
+        }, function () {
+        }
+            )
     }
 
     handleDelete = (term) => {
-        const newSets=this.state.sets.filter(sets => (sets !== term));
+        const newSets=this.state.sets.filter(sets => (sets.id !== term));
         this.setState({sets:newSets});
     };
 
-    handleChange = (item) => {
-
+    handleChange = (item,k) => {
+        let newArr = this.state.sets;
+        let i = newArr.findIndex(x => x.id === k);
+        newArr[i] = item;
         this.setState({
-            sets: [...this.state.sets, item]
+            sets: newArr
+        },function () {
+            console.log(this.state);
         });
-        // console.log(this.state)
-        console.log(item)
     };
 
     render() {
@@ -46,7 +55,7 @@ class EditSet extends Component {
                 <div className="row">
                     {this.state.sets.map(item => (
                         <div className="col-sm-12">
-                            <EditCard  height={"100px"} onDelete={this.handleDelete} term={null} definition={null} item={item} onItemChange={this.handleChange}></EditCard>
+                            <EditCard  height={"100px"} onDelete={this.handleDelete}  term={item.term} number={item.id} definition={item.definition} item={item} onItemChange={this.handleChange}></EditCard>
                             <div className="top-buffer"></div>
                         </div>
                     ))}

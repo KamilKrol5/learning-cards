@@ -5,6 +5,7 @@ class EditCard extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            id: this.props.number,
             term: this.props.term,
             definition: this.props.definition
         };
@@ -14,9 +15,11 @@ class EditCard extends Component {
     handleChange = (e) => {
         // e.preventDefault();
         this.setState({
-            [e.target.name]: e.target.value
-        });
-        this.props.onItemChange(this.state);
+        [e.target.name]: e.target.value 
+        }, function () {
+            this.props.onItemChange(this.state,this.props.number);
+            }
+        );
     };
 
 
@@ -37,7 +40,7 @@ class EditCard extends Component {
                                name="definition" placeholder="Definition" defaultValue={this.props.definition}/>
                     </form>
                 </div>
-                <button type="button" className="close m-button" aria-label="Close" onClick={() => this.props.onDelete(this.state)}>
+                <button type="button" className="close m-button" aria-label="Close" onClick={() => this.props.onDelete(this.props.number)}>
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>

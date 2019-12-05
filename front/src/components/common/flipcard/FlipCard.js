@@ -25,10 +25,10 @@ class FlipCard extends Component {
                  }
             >
                 <div className="m-flip-card-inner">
-                    <div className="m-flip-card-front">
+                    <div className="m-flip-card-front m-flex-ctr-cnt">
                         <p>{this.props.term}</p>
                     </div>
-                    <div className="m-flip-card-back">
+                    <div className="m-flip-card-back m-flex-ctr-cnt">
                         <p>{this.props.definition}</p>
                     </div>
                 </div>

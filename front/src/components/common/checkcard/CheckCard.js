@@ -22,11 +22,11 @@ class CheckCard extends Component {
                     backgroundColor: this.state.color
                 }}
             >
-                <div className="m-card-term-wrapper m-card-part">
+                <div className="m-card-term-wrapper m-card-part m-flex-ctr-cnt">
                     <p>{this.props.term}</p>
                 </div>
 
-                <div className="m-card-input-wrapper m-card-part">
+                <div className="m-card-input-wrapper m-card-part m-flex-ctr-cnt">
                     <input
                         id="m-check-card-input"
                         type="text"
@@ -37,7 +37,7 @@ class CheckCard extends Component {
                 </div>
 
                 <div className="m-card-line"/>
-                <div className="m-card-check-wrapper m-card-part">
+                <div className="m-card-check-wrapper m-card-part m-flex-ctr-cnt">
                     <div
                         className="m-btn-1-box-sh no-select"
                         onClick={this.checkAnswer}

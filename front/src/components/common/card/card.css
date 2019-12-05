@@ -1,8 +1,5 @@
 .m-card-term, .m-card-definition {
     height: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .m-card-term p, .m-card-definition p {

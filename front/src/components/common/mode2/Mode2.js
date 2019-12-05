@@ -90,14 +90,14 @@ class Mode2 extends Component {
 
     render() {
         return (
-            <div className="m-mode-2">
+            <div className="m-mode-2 m-flex-ctr-cnt">
                 <div
                     style={{height: this.state.error && "45px"}}
                     className="m-error-popup"
                 >
                     <p className="m-error-popup-p">{this.state.error}</p>
                 </div>
-                <header className="m-mode-2-header">
+                <header className="m-mode-2-header m-flex-ctr-cnt">
                     <h1 className="m-mode-2-header-title">
                         {this.props.setName}
                     </h1>
@@ -109,13 +109,13 @@ class Mode2 extends Component {
 
                         ?
 
-                        <main className="m-mode-2-main">
-                            <div className="m-mode-2-card-wrapper">
+                        <main className="m-mode-2-main m-flex-ctr-cnt">
+                            <div className="m-mode-2-card-wrapper m-flex-ctr-cnt">
                                 {
                                     this.state.finish
 
                                         ?
-                                        <div className="m-mod-2-middle-finish-wrapper">
+                                        <div className="m-mod-2-middle-finish-wrapper m-flex-ctr-cnt">
                                             <div className="m-mod-2-middle-finish-txt">
                                                 Won!
                                             </div>
@@ -156,7 +156,7 @@ class Mode2 extends Component {
 
                     &&
 
-                    <footer className="m-mode-2-footer">
+                    <footer className="m-mode-2-footer m-flex-ctr-cnt">
                         <p className="m-mode-2-footer-ctr">
                             <span>
                                 {this.thumbsUp}

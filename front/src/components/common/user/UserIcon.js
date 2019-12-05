@@ -2,8 +2,8 @@ import React from "react";
 
 export const userIcon =
     <svg className="m-user-info-icon-svg"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
+         xmlns="http://www.w3.org/2000/svg"
+         viewBox="0 0 24 24"
     >
         <path
             opacity=".9"

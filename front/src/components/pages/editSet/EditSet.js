@@ -20,7 +20,8 @@ class EditSet extends Component {
         this.setState({
                 items: [...this.state.items, newSet],
                 number: i + 1
-            }, function () {}
+            }, function () {
+            }
         )
     }
 

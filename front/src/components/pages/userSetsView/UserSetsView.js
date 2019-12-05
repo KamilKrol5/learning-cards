@@ -31,7 +31,7 @@ class UserSetsView extends Component {
         this.props.navigateToEditSetView(setId);
     };
 
-    navigateToCreateSet= () => {
+    navigateToCreateSet = () => {
         console.log("Create new set action called");
         this.props.navigateToCreateSetView();
     };
@@ -42,16 +42,16 @@ class UserSetsView extends Component {
     };
 
     render() {
-        const successfulFetchFromAPI  =
+        const successfulFetchFromAPI =
             <div className="d-flex flex-wrap">
                 <ActionCard title="Create new set" action={
                     () => this.navigateToCreateSet()
-                    }>
+                }>
                 </ActionCard>
 
                 {this.state.sets.map(set => (
-                    <SetCard  title={set.name} key={set.id} editAction={
-                        (e) => this.navigateToEditingSet(e,set.id)
+                    <SetCard title={set.name} key={set.id} editAction={
+                        (e) => this.navigateToEditingSet(e, set.id)
                     } onCardClicked={
                         () => this.navigateSetView(set.id)
                     }>

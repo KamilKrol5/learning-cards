@@ -3,7 +3,7 @@
     height: 100%;
 
     border-radius: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     background-color: #e7e7e7;
     margin: 0;
 
@@ -12,15 +12,17 @@
     align-items: center;
 }
 
-.m-button{
+.m-button {
     position: absolute;
     top: 2%;
     right: 2%;
 }
-.m-button-edit:hover{
+
+.m-button-edit:hover {
     color: black;
 }
-.m-form{
+
+.m-form {
     position: absolute;
     bottom: 40%;
 }

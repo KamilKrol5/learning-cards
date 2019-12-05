@@ -7,11 +7,11 @@ import * as AuthActions from "../../../store/actions/authActions";
 class UserInfo extends Component {
 
     constructor(props) {
-       super(props);
+        super(props);
 
-       this.state = {
-           showLogoutButton: false
-       }
+        this.state = {
+            showLogoutButton: false
+        }
     }
 
     toggleLogOutButton = () => {
@@ -21,7 +21,6 @@ class UserInfo extends Component {
     };
 
     render() {
-
 
 
         return (

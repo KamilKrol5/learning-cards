@@ -58,7 +58,7 @@ class Register extends Component {
         </div>;
 
 
-        const registerSuccessfulPage = <div className="m-auth-page-form-wrapper">
+        const registerSuccessfulPage = <div className="m-auth-page-form-wrapper m-flex-ctr-cnt">
             <div className="m-auth-page-reg-ok m-flex-ctr-cnt">
                 <div className="m-auth-page-reg-ok-msg m-flex-ctr-cnt">
                     <svg className="m-auth-page-reg-ok-msg-img"
@@ -73,7 +73,7 @@ class Register extends Component {
                     </p>
                 </div>
                 <div className="m-auth-page-reg-ok-lnk">
-                    <Link className="m-nav-btn m-nav-link" to="/login">Login</Link>
+                    <Link className="m-nav-btn m-nav-link m-btn-1-box-sh" to="/login">Login</Link>
                 </div>
             </div>
         </div>;
@@ -82,7 +82,7 @@ class Register extends Component {
         return (
             <div id="m-auth-page">
                 <div className="m-auth-page-bg m-flex-ctr-cnt">
-                    <Link to="/" className="m-auth-page-logo">LearningCards</Link>
+                    <Link to="/" className="m-auth-page-logo m-logo">LearningCards</Link>
                 </div>
                 {
                     this.props.auth.registerSuccessful ? registerSuccessfulPage : registerPage

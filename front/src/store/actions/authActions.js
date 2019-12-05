@@ -1,4 +1,5 @@
 import API from '../../utils/api'
+
 const CONNECTION_TO_SERVER_LOST_MESSAGE = "Connection to server lost";
 
 export const loginSuccessful = (refreshToken, accessToken, username) => ({
@@ -51,23 +52,23 @@ export const register = (username, email, password) => (dispatch) => {
             console.log(`DEBUG: Register successful, response: ${JSON.stringify(response)}`);
             dispatch(registerSuccessful());
         }).catch(error => {
-            console.log(`DEBUG: Register failed, response: ${JSON.stringify(error)}`);
-            if (error.response != null) {
-                let message = "";
-                if (error.response.data.username !== undefined) {
-                    message = message + error.response.data.username.toString();
-                }
-                if (error.response.data.email !== undefined) {
-                    message = message + error.response.data.email.toString();
-                }
-                if (error.response.data.password !== undefined) {
-                    message = message + error.response.data.password.toString();
-                }
-                if (message === "") message = "Unknown error has occurred.";
-                dispatch(registerError(message));
-            } else {
-                dispatch(loginError(CONNECTION_TO_SERVER_LOST_MESSAGE));
+        console.log(`DEBUG: Register failed, response: ${JSON.stringify(error)}`);
+        if (error.response != null) {
+            let message = "";
+            if (error.response.data.username !== undefined) {
+                message = message + error.response.data.username.toString();
             }
+            if (error.response.data.email !== undefined) {
+                message = message + error.response.data.email.toString();
+            }
+            if (error.response.data.password !== undefined) {
+                message = message + error.response.data.password.toString();
+            }
+            if (message === "") message = "Unknown error has occurred.";
+            dispatch(registerError(message));
+        } else {
+            dispatch(loginError(CONNECTION_TO_SERVER_LOST_MESSAGE));
+        }
     });
 };
 

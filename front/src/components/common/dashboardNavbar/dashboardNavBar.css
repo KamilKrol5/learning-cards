@@ -1,4 +1,4 @@
-.m-sidebar{
+.m-sidebar {
     width: fit-content;
     position: fixed;
     height: 100%;
@@ -20,6 +20,7 @@
     color: black;
     text-decoration: none;
 }
+
 .m-nav-logo, .m-nav-logo:hover {
     color: black;
     font-size: 30px;

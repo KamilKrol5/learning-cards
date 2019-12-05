@@ -11,7 +11,7 @@ import EditSet from "../editSet/EditSet";
  * Komponent zawierający profil użytkownika
  */
 class Dashboard extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
     }
 
@@ -26,6 +26,7 @@ class Dashboard extends Component {
                     <DashboardNavBar>
                     </DashboardNavBar>
                 </div>
+
                 <div  id="dashDiv">
                     {this.drawViewAccordingToState()}
                 </div>

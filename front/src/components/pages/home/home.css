@@ -1,7 +1,7 @@
 #m-home-page {
     /*thanks to: https://www.pexels.com/@jeshoots-com-147458*/
     background: url("../../../assets/img1.jpeg") no-repeat;
-    background-size:cover;
+    background-size: cover;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -17,13 +17,16 @@
     width: 100%;
 }
 
-#m-home-page .m-home-page-btn {
-    color: black;
-    font-size: 15px;
-    text-align: center;
-    padding: 15px 60px;
-    margin: 10px;
-    border: 1px solid black;
-    border-radius: 30px;
+
+.m-home-page-btn,
+.m-home-page-btn:hover,
+.m-home-page-btn:active,
+.m-home-page-btn:link {
     text-decoration: none;
+    color: #000;
+}
+
+.m-home-page-btn {
+    margin-top: 45px;
+    padding: 15px 45px !important;
 }

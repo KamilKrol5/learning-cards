@@ -6,7 +6,7 @@ import React, {Component} from 'react';
 class FormInput extends Component {
     render() {
         return (
-            <div className="m-form-input-group">
+            <div className="m-form-input-group m-flex-ctr-cnt">
                 <input
                     className="m-form-input-input"
                     id={this.props.name + this.props.keyv}

@@ -7,7 +7,6 @@ import PageFlexWrapper from "./wrappers/pagewrapper/PageFlexWrapper";
 import LoginWrapper from "./wrappers/pagewrapper/LoginWrapper";
 import Home from "./pages/home/Home";
 import Login from "./pages/auth/Login";
-import ApiTest from "./pages/ApiTest";
 import Register from "./pages/auth/Register";
 import Dashboard from "./pages/dashboard/Dashboard";
 import NavBar from "./common/navbar/NavBar";
@@ -28,7 +27,6 @@ function App() {
 
     return (
 
-        //Router w zależności od ścieżki na której aktualnie się znajdujemy renderuje odpowiednie komponenty
         <BrowserRouter>
             <Route
                 exact={true}
@@ -44,7 +42,6 @@ function App() {
             />
 
             <Route
-                exact={true}
                 path="/login"
                 render={
                     () => (
@@ -55,20 +52,8 @@ function App() {
                 }
             />
 
-            <Route
-                exact={true}
-                path="/apitest"
-                render={
-                    () => (
-                        <PageFlexWrapper>
-                            <ApiTest/>
-                        </PageFlexWrapper>
-                    )
-                }
-            />
 
             <Route
-                exact={true}
                 path="/signup"
                 render={
                     () => (
@@ -80,7 +65,6 @@ function App() {
             />
 
             <Route
-                exact={true}
                 path="/user"
                 render={
                     () => (
@@ -92,7 +76,6 @@ function App() {
             />
 
             <Route
-                exact={true}
                 path="/profile"
                 render={
                     () => (
@@ -104,7 +87,6 @@ function App() {
             />
 
             <Route
-                exact={true}
                 path="/mode1"
                 render={
                     () => (
@@ -118,7 +100,6 @@ function App() {
                 }
             />
             <Route
-                exact={true}
                 path="/mode2"
                 render={
                     () => (
@@ -133,7 +114,6 @@ function App() {
             />
 
             <Route
-                exact={true}
                 path="/checkcard"
                 render={
                     () => (
@@ -151,7 +131,6 @@ function App() {
             />
 
             <Route
-                exact={true}
                 path="/flipcard"
                 render={
                     () => (
@@ -169,7 +148,6 @@ function App() {
 
 
             <Route
-                exact={true}
                 path="/card"
                 render={
                     () => (
@@ -185,8 +163,7 @@ function App() {
                 }
             />
             <Route
-                exact={true}
-                path="/Dashboard"
+                path="/dashboard"
                 render={
                     () => (
                         <PageFlexWrapper>
@@ -199,7 +176,6 @@ function App() {
 
 
             <Route
-                exact={true}
                 path="/user-sets"
                 render={
                     () => (

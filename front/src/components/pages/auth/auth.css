@@ -1,0 +1,127 @@
+#m-auth-page {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.m-auth-page-logo {
+    max-height: 80px;
+}
+
+.m-auth-page-bg {
+    width: 100%;
+    height: 10%;
+    background: url("../../../assets/color-2174065.png");
+}
+
+.m-auth-page-form-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.m-auth-page-reg-ok {
+    flex-direction: column;
+}
+
+
+.m-auth-page-reg-ok-msg-img {
+    margin: 0 10px;
+    width: 35px;
+    height: 35px;
+}
+
+.m-auth-page-reg-ok-msg-p {
+    font-size: 20px;
+    margin: 15px;
+}
+
+.m-auth-page-form {
+    flex-direction: column;
+}
+
+.m-form-input-group {
+    flex-direction: column;
+}
+
+.m-form-input-input {
+    background: #fcfcfc;
+    border: 1px solid #aaaaaa;
+    text-align: center;
+    margin: 3px 0;
+    height: 50px;
+    width: 280px;
+    border-radius: 25px;
+}
+
+.m-form-input-error {
+    font-size: 14px;
+    text-align: center;
+    color: #880000;
+    margin: 3px;
+    max-width: 200px;
+}
+
+.m-form-btn-submit {
+    font-size: 14px;
+    margin-top: 25px;
+    border: 1px solid #aaaaaa;
+    padding: 10px 60px;
+    color: #8f8a9e;
+    background: #fcfcfc;
+    border-radius: 25px;
+    transition: background-color .3s;
+}
+
+.m-form-btn-submit:hover {
+    background: #b80460;
+    color: #f66351;
+}
+
+@media screen and (min-width: 600px) {
+    #m-auth-page {
+        flex-direction: row;
+    }
+
+    .m-auth-page-bg {
+        align-items: unset;
+        width: 30%;
+        height: 100%;
+    }
+
+    .m-auth-page-form-wrapper {
+        height: 100%;
+        width: 70%;
+    }
+
+    .m-auth-page-logo {
+        margin-top: 15px;
+        font-size: 24px;
+    }
+}
+
+@media screen and (min-width: 850px) {
+    .m-form-input-input {
+        font-size: 16px;
+        height: 60px;
+        width: 400px;
+    }
+
+    .m-form-input-error {
+        font-size: 15px;
+        max-width: 350px;
+    }
+
+    .m-form-btn-submit {
+        font-size: 16px;
+        margin-top: 25px;
+        padding: 15px 95px;
+    }
+
+    .m-auth-page-logo {
+        margin-top: 15px;
+        font-size: 32px;
+    }
+}
+

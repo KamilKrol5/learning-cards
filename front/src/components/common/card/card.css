@@ -1,0 +1,9 @@
+.m-card-term, .m-card-definition {
+    height: 50%;
+}
+
+.m-card-term p, .m-card-definition p {
+    color: #272727;
+    font-size: 22px;
+}
+

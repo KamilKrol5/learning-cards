@@ -1,0 +1,61 @@
+.m-dashboard-nav-wrapper {
+    width: 100%;
+    height: 100%;
+    background-color: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+}
+
+.m-dashboard-nav-logo-wrapper {
+    width: 100%;
+    height: 10%;
+}
+
+.m-dashboard-nav-logo {
+    font-size: 30px;
+    transition: color .3s;
+}
+
+.m-dashboard-nav-logo,
+.m-dashboard-nav-logo:hover,
+.m-dashboard-nav-logo:active,
+.m-dashboard-nav-logo:link {
+    color: #343434;
+    text-decoration: none;
+}
+
+.m-dashboard-nav-logo:hover {
+    color: #646464;
+    cursor: pointer;}
+
+.m-dashboard-nav-link {
+    text-align: center;
+    padding: 8px 0;
+    width: 100%;
+    transition: background-color .2s;
+}
+
+.m-dashboard-nav-link:hover {
+    background-color: #cbcbcb;
+    cursor: pointer;
+}
+
+.m-width-100 {
+    width: 100%;
+}
+
+.m-dashboard-nav-spacer {
+    width: 100%;
+    height: 15%;
+}
+
+.m-dashboard-nav-links {
+    width: 100%;
+    height: 75%;
+}
+
+.m-dashboard-nav-user-wrapper {
+    width: 80%;
+    border-radius: 10px;
+    overflow: hidden;
+}

@@ -1,0 +1,47 @@
+.m-navbar {
+    position: fixed;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.m-nav-link {
+    margin: 5px;
+    padding: 10px 20px;
+    display: inline-block;
+    color: black;
+    text-decoration: none;
+    text-align: center;
+}
+
+.m-nav-link:hover {
+    color: black;
+    text-decoration: none;
+}
+
+.m-nav-right {
+    min-width: 280px;
+}
+
+.m-nav-left {
+    min-width: 230px;
+}
+
+.m-nav-logo, .m-nav-logo:hover {
+    color: white;
+    font-size: 30px;
+    /*float: left*/
+}
+
+@media screen and (min-width: 600px) {
+    .m-navbar {
+        justify-content: space-between;
+    }
+
+    .m-nav-left {
+        margin-left: 30px;
+    }
+
+    .m-nav-right {
+        margin-right: 30px;
+    }
+}

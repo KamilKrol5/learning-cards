@@ -4,6 +4,10 @@
     z-index: 1000;
 }
 
+.m-user-info-wrapper:hover {
+    cursor: pointer;
+}
+
 .m-user-info {
     /*normally*/
     height: 100%;

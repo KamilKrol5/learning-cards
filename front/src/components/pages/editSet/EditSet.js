@@ -98,6 +98,7 @@ class EditSet extends Component {
         this.submitAdditions(prevItems, items);
         this.submitDeletes(prevItems, items);
         this.submitEditions(prevItems, items);
+        this.props.setDashboardUserSetView();
     };
 
     submitAdditions(prevItems, items) {
@@ -214,7 +215,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return ({
-        setErrorState: () => dispatch(DashboardActions.setDashboardError())
+        setErrorState: () => dispatch(DashboardActions.setDashboardError()),
+        setDashboardUserSetView: () => dispatch(DashboardActions.setDashboardUserSetView()),
     })
 };
 

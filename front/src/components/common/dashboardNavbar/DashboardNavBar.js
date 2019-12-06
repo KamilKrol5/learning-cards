@@ -30,13 +30,6 @@ class DashboardNavBar extends Component {
                                 Zestawy
                             </div>
                         </li>
-                        <li className="nav-item">
-                            <div
-                                className="m-dashboard-nav-link m-width-100 no-select"
-                            >
-                                Preferencje
-                            </div>
-                        </li>
                     </ul>
                 </div>
                 <div className="m-dashboard-nav-spacer m-flex-ctr-cnt">

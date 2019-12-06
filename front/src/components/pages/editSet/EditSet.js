@@ -28,7 +28,9 @@ class EditSet extends Component {
 
     addState(e) {
         e.preventDefault();
-        let i = Math.max(...this.state.items.map(i => i.id))+1;
+        let i=0;
+        if (this.state.items.length > 0)
+            i = Math.max(...this.state.items.map(i => i.id))+1;
         const newItem = {id: i, term: null, definition: null};
         this.setState({
                 items: [...this.state.items, newItem],
@@ -62,7 +64,7 @@ class EditSet extends Component {
                 <div className="mb-4 d-flex justify-content-between" >
                     <h1 className="mt-5">{this.props.setName}</h1>
                     { (this.state.editable) &&
-                    <button type="button" className="btn btn-primary btn-lg col-sm-1 mb-5 mt-3">Save</button>
+                    <button type="button" className="btn btn-primary btn-lg col-xs-1 mb-5 mt-3">Save</button>
                     }
                 </div>
                 <div className="row">
@@ -84,7 +86,7 @@ class EditSet extends Component {
                             <form onSubmit={(e) => {
                                 this.addState(e)
                             }}>
-                                <button className="btn btn-primary btn-lg offset-5 col-sm-2 mt-4 mb-5">ADD</button>
+                                <button className="btn btn-primary btn-lg offset-5 col-xs-2 mt-4 mb-5">ADD</button>
                             </form>
                         }
                     </div>

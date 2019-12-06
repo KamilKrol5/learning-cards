@@ -12,24 +12,30 @@ class EditSet extends Component {
         this.state = {
             editable: this.props.editable,
             setName: "default",
-            items: []
+            items: [],
+            prevItems: [],
         }
     }
 
     componentDidMount() {
         if (!this.props.creation) {
-            API.getSetItems(this.props.setId, this.props.token).then(
-                response => {
-                    const items = response.data;
-                    this.setState({
-                        //deep clone
-                        prevItems: items.map(item => ({...item})),
-                        //org
-                        items: response.data,
-                    })
-                }
-            ).catch(error => this.props.setErrorState())
+            this.setState({
+                setId: this.props.setId
+            }, () => {
+                API.getSetItems(this.state.setId, this.props.token).then(
+                    response => {
+                        const items = response.data;
+                        this.setState({
+                            //deep clone
+                            prevItems: items.map(item => ({...item})),
+                            //org
+                            items: response.data,
+                        })
+                    }
+                ).catch(() => this.props.setErrorState())
+            });
         }
+
     }
 
     handleAdd(e) {
@@ -73,6 +79,19 @@ class EditSet extends Component {
 
     };
 
+    saveAction = () => {
+        if (this.props.creation) {
+            API.addSet(this.state.setName, this.props.token)
+                .then((result) => {
+                    this.setState({
+                        setId: result.data.id
+                    }, this.submitEdit)
+                })
+        } else {
+            this.submitEdit();
+        }
+    };
+
     submitEdit = () => {
         const prevItems = this.state.prevItems;
         const items = this.state.items;
@@ -88,7 +107,7 @@ class EditSet extends Component {
                     item.id,
                     item.term,
                     item.definition,
-                    this.props.setId,
+                    this.state.setId,
                     this.props.token
                 );
             }
@@ -119,7 +138,7 @@ class EditSet extends Component {
                         items[cID].id,
                         items[cID].term,
                         items[cID].definition,
-                        this.props.setId,
+                        this.state.setId,
                         this.props.token
                     )
                 }
@@ -140,7 +159,11 @@ class EditSet extends Component {
                         <h1 className="mt-5">{this.props.setName}</h1>
                     }
                     { (this.state.editable) &&
-                    <button type="button" className="btn btn-primary btn-lg col-xs-1 mb-5 mt-3">Save</button>
+                    <button type="button" className="btn btn-primary btn-lg col-xs-1 mb-5 mt-3"
+                            onClick={() => {
+                                this.saveAction();
+                            }}>
+                        Save</button>
                     }
                 </div>
                 <div className="row">

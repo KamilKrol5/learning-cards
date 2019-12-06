@@ -10,7 +10,7 @@ class DashboardNavBar extends Component {
             <nav className={"m-dashboard-nav-wrapper"}>
                 <div className="m-dashboard-nav-logo-wrapper m-flex-ctr-cnt">
                     <div
-                        className="m-dashboard-nav-logo"
+                        className="m-dashboard-nav-logo no-select"
                         onClick={() => {
                             this.props.setView()
                         }}

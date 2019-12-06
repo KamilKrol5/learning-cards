@@ -8,6 +8,7 @@
 
 .m-btn-2-box-sh:hover, .m-btn-1-box-sh:hover {
     background-color: #eeeeee;
+    cursor: pointer;
 }
 
 .m-btn-2-box-sh:active, .m-btn-1-box-sh:active {

@@ -49,7 +49,7 @@ class Dashboard extends Component {
                     </EditSet>
                 </div>;
             case 'DASHBOARD_CREATE_SET_VIEW':
-                return <EditSet editable={true}>
+                return <EditSet editable={true} creation={true}>
                 </EditSet>;
             case 'DASHBOARD_MODE1':
                 return <Mode1 setID={this.props.setID} setName={this.props.setName}/>;

@@ -11,23 +11,25 @@ class EditSet extends Component {
         super(props);
         this.state = {
             editable: this.props.editable,
-            setName: "Loading set...", //unnecessary (?)
+            setName: "default",
             items: []
         }
     }
 
     componentDidMount() {
-        API.getSetItems(this.props.setId, this.props.token).then(
-            response => {
-                const items = response.data;
-                this.setState({
-                    //deep clone
-                    prevItems: items.map(item => ({...item})),
-                    //org
-                    items: response.data,
-                })
-            }
-        ).catch(() => this.props.setErrorState())
+        if (!this.props.creation) {
+            API.getSetItems(this.props.setId, this.props.token).then(
+                response => {
+                    const items = response.data;
+                    this.setState({
+                        //deep clone
+                        prevItems: items.map(item => ({...item})),
+                        //org
+                        items: response.data,
+                    })
+                }
+            ).catch(error => this.props.setErrorState())
+        }
     }
 
     handleAdd(e) {
@@ -60,6 +62,15 @@ class EditSet extends Component {
         }, function () {
             console.log(this.state.items);
         });
+    };
+
+    changeSetName = (e) => {
+        this.setState({
+            setName: e.target.value
+        },function () {
+            console.log(this.state.setName)
+        });
+
     };
 
     submitEdit = () => {
@@ -119,18 +130,17 @@ class EditSet extends Component {
     render() {
         return (
             <div className="container">
-                <div className="mb-4 d-flex justify-content-between">
-                    <h1 className="mt-5">{this.props.setName}</h1>
-                    {(this.state.editable) &&
-                    <button
-                        type="button"
-                        className="btn btn-primary btn-lg col-xs-1 mb-5 mt-3"
-                        onClick={() => {
-                            this.submitEdit();
-                        }}
-                    >
-                        Save
-                    </button>
+                <div className="mb-4 d-flex justify-content-between" >
+                    { this.props.creation ?
+                        <form className="container w-100">
+                        <input readOnly={!this.state.editable} onChange={this.changeSetName} className="col-sm-8 offset-0 mt-4 mb-4 float-left" type="text"
+                                   placeholder="Your set name"/>
+                        </form>
+                        :
+                        <h1 className="mt-5">{this.props.setName}</h1>
+                    }
+                    { (this.state.editable) &&
+                    <button type="button" className="btn btn-primary btn-lg col-xs-1 mb-5 mt-3">Save</button>
                     }
                 </div>
                 <div className="row">
@@ -160,9 +170,7 @@ class EditSet extends Component {
                         }}>
                             <button
                                 className="btn btn-primary btn-lg offset-5 col-sm-2 mt-4 mb-5"
-                            >
-                                ADD
-                            </button>
+                            >ADD</button>
                         </form>
                         }
                     </div>

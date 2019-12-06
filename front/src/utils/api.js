@@ -137,7 +137,7 @@ const API = {
             data: {},
             timeout: apiCallTimeout,
         })
-    }
+    },
 };
 
 export default API;

@@ -1,6 +1,6 @@
 # Learning Cards API description
    <strong>1. AUTHENTICATION</strong>  
-    Learning Cards API uses JWT tokens for authentication.  
+    Learning Cards API uses JWT (tokens) for authentication.  
     To get a JWT token make a POST API call with 
     valid credentials. If valid credentials are provided two
     tokens will be returned in the response body section. These two tokens are 

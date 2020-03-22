@@ -20,5 +20,5 @@ Editing "Trees" learning set. Every item can be removed, changed or deleted. The
 ![Screenshot](https://github.com/KamilKrol5/learning-cards/blob/master/screenshots/learning-cards-editing-set.png)
 "Flashcard" (first) learning mode. User can see all flashcards in the set one by one:
 ![Screenshot](https://github.com/KamilKrol5/learning-cards/blob/master/screenshots/learning-cards-learning-mode-cards.png)
-"Writing" (second) learning mode. User needs to write the definition in the field. If the answer is not correct, the card will apear again while learning. Below statistics can be seen:
+"Writing" (second) learning mode. User needs to write the definition in the field. If the answer is not correct, the card will apear again while learning. Statistics can be seen at the bottom:
 ![Screenshot](https://github.com/KamilKrol5/learning-cards/blob/master/screenshots/learning-cards-learning-mode-writing.png)

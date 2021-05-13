@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from LearningCards.models import LearningSet, Item, get_user_model
+from learning_cards.models import LearningSet, Item, get_user_model
 
 
 class UserSerializer(serializers.ModelSerializer):

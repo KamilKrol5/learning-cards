@@ -1,5 +1,5 @@
 from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView, CreateAPIView
-from LearningCards import models
+from learning_cards import models
 from . import serializers
 from rest_framework import status
 from rest_framework.exceptions import NotAcceptable

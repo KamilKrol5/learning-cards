@@ -7,6 +7,6 @@ urlpatterns = [
     path('api/token/verify/', jwt_views.TokenVerifyView.as_view(), name='token_verify'),
     path('api/token/refresh/', jwt_views.TokenRefreshView.as_view(), name='token_refresh'),
     path('admin/', admin.site.urls),
-    path('api/', include('LearningCards.api.urls'))
+    path('api/', include('learning_cards.api.urls'))
     # path('api-auth/', include('rest_framework.urls')),
 ]

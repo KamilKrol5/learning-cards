@@ -186,6 +186,7 @@
     }
     ```
     To make a request to this API endpoint, an access token is not required.
-8. Adding new set  
-    tba
+8. The rest of endpoints  
+    Since project is no longer maintained, the rest of endpoints won't be described in this file.
+    
 

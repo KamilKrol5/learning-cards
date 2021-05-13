@@ -1,4 +1,7 @@
 # learning-cards
+[![CircleCI](https://circleci.com/gh/KamilKrol5/learning-cards.svg?style=svg&circle-token=9ad2efaddf08dcc4fe8f867087f7614342409265)](https://circleci.com/gh/KamilKrol5/learning-cards)
+
+A simple web application which helps learning using flashcards.  
 API description can be found here: https://github.com/KamilKrol5/learning-cards/blob/master/backend/API_description.md
 ### Technologies
 * Python 3.7,

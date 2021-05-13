@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const rootURL = "http://206.81.21.127:8000";
+const rootURL = "http://127.0.0.1:8000";
 const apiCallTimeout = 2000;
 const apiServer = axios.create();
 apiServer.defaults.timeout = 3000;

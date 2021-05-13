@@ -1,7 +1,12 @@
 from django.urls import path
 
-from .views import LearningSetsListAPIView, ItemsListAPIView, LearningSetRetrieveUpdateDestroyAPIView,\
-    ItemRetrieveUpdateDestroyAPIView, RegisterAPIView
+from .views import (
+    LearningSetsListAPIView,
+    ItemsListAPIView,
+    LearningSetRetrieveUpdateDestroyAPIView,
+    ItemRetrieveUpdateDestroyAPIView,
+    RegisterAPIView
+)
 
 urlpatterns = [
     path('sets/', LearningSetsListAPIView.as_view()),

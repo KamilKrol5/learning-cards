@@ -1,10 +1,47 @@
 # learning-cards
 API description can be found here: https://github.com/KamilKrol5/learning-cards/blob/master/backend/API_description.md
 ### Technologies
-* Python 3.7 and Django 2.2.8,
+* Python 3.7,
+* Django 2.2.20 and Django REST Framework 3.12.4,
 * React with Redux,
 * Bootstrap 4.4.1,
 * JWT authentication.
+### How to run?
+##### Backend - Django application
+
+1. Install python 3.7.
+    ```shell script
+    $ sudo apt-get update
+    $ sudo apt install python3.7
+    ```
+2. Install pip for Python 3.
+    ```shell script
+    $ sudo apt-get install python3-pip
+    ```
+3. Install requirements.
+    ```shell script
+    $ sudo python3.7 -m pip install -r backend/requirements.txt
+    ```
+4. Create migrations and make migrations.
+    ```shell script
+    $ python3.7 backend/manage.py makemigrations
+    $ python3.7 backend/manage.py migrate
+    ```
+5. Run Django development server (not for production purposes).
+    ```shell script
+    $ python3.7 backend/manage.py runserver 8000
+    ```
+##### Frontend - React application 
+1. Install NodeJS
+2. Enter 'front' directory and initialize project.
+    ```shell script
+   $ cd front
+   $ npm install
+    ```
+3. Start React application
+   ```shell script
+   $ npm start
+   ```
 ### Screenshots
 Start page:   
 ![Screenshot](https://github.com/KamilKrol5/learning-cards/blob/master/screenshots/Screenshot_1.png)

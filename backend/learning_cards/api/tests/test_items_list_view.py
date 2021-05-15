@@ -3,7 +3,7 @@ from django.urls import reverse
 from rest_framework import status
 from rest_framework.test import APITestCase
 
-from learning_cards.api.serializers import LearningSetSerializer, ItemSerializer
+from learning_cards.api.serializers import ItemSerializer
 from learning_cards.api.tests.utils import create_dummy_items
 from learning_cards.models import LearningSet
 
@@ -24,4 +24,3 @@ class ItemsListApiViewTest(APITestCase):
             response.data,
             ItemSerializer(many=True).to_representation(self.set1_items)
         )
-

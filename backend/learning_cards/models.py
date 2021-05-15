@@ -12,3 +12,6 @@ class Item(models.Model):
     term = models.CharField(max_length=100, blank=False)
     definition = models.TextField()
     learning_set_id = models.ForeignKey(LearningSet, on_delete=models.CASCADE)
+
+    def __repr__(self):
+        return f'<Item {self.id}; T: {self.term} -> D: {self.definition}>'

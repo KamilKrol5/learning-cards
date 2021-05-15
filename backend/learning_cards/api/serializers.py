@@ -1,4 +1,5 @@
 from rest_framework import serializers
+
 from learning_cards.models import LearningSet, Item, get_user_model
 
 
@@ -22,6 +23,7 @@ class LearningSetSerializer(serializers.ModelSerializer):
     class Meta:
         model = LearningSet
         fields = ['id', 'name', 'owner', 'creation_date']
+        read_only_fields = ['id']
 
 
 class LearningSetReadOnlyOwnerSerializer(serializers.ModelSerializer):
@@ -35,9 +37,13 @@ class ItemSerializer(serializers.ModelSerializer):
     class Meta:
         model = Item
         fields = ['id', 'term', 'definition', 'learning_set_id']
+        read_only_fields = ['id']
 
 
-class ItemListSerializer:
+class ItemListSerializer(ItemSerializer):
+    class Meta(ItemSerializer.Meta):
+        pass
+
     def __new__(cls, *args, **kwargs):
         kwargs['many'] = True
         return ItemSerializer(*args, **kwargs)

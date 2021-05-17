@@ -40,10 +40,7 @@ class ItemSerializer(serializers.ModelSerializer):
         read_only_fields = ['id']
 
 
-class ItemListSerializer(ItemSerializer):
-    class Meta(ItemSerializer.Meta):
-        pass
-
+class ItemListSerializer:
     def __new__(cls, *args, **kwargs):
         kwargs['many'] = True
         return ItemSerializer(*args, **kwargs)

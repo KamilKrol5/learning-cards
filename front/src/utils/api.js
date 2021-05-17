@@ -97,16 +97,16 @@ const API = {
 
     addItem: (itemId, itemTerm, itemDefinition, itemSetId, token) => {
         return apiServer({
-            url: `/api/items/`,
+            url: `/api/items/add`,
             method: "post",
             headers: {
                 Authorization: `Bearer ${token}`
             },
-            data: {
+            data: [{
                 "term": itemTerm,
                 "definition": itemDefinition,
                 "learning_set_id": itemSetId
-            },
+            }],
             timeout: apiCallTimeout,
         })
     },

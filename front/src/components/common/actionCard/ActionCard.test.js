@@ -1,8 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import ActionCard from './ActionCard';
-import {fireEvent, render} from "@testing-library/react";
-
+import {fireEvent, render, screen } from "@testing-library/react";
 
 const dummyAction = () => {
 }
@@ -26,7 +25,7 @@ test('Test click event uses `action` property', () => {
         <ActionCard title="title" action={dummyAction}/>,
     );
 
-    const card = document.getElementById('card');
+    const card = screen.getByTestId('card')
     fireEvent.click(card);
     expect(x).toBeTruthy()
 });

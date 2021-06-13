@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './editcard.css';
+import 'front/src/components/common/editCard/editcard.css';
 
 class EditCard extends Component {
     constructor(props) {
@@ -42,7 +42,7 @@ class EditCard extends Component {
                     </form>
                 </div>
                 {this.state.editable &&
-                    <button type="button" className="close m-button" aria-label="Close"
+                    <button type="button" className="close m-button" aria-label="Close" data-testid="delete-button"
                             onClick={() => this.props.onDelete(this.props.number)}>
                         <span aria-hidden="true">&times;</span>
                     </button>

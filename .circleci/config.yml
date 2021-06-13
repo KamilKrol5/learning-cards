@@ -1,8 +1,10 @@
-version: 2
+version: 2.1
+orbs:
+  node: circleci/node@2.0.2
 jobs:
   build:
     docker:
-      - image: circleci/python:3.9
+      - image: circleci/python:3.9-node
     steps:
       - checkout
       - restore_cache:
@@ -20,6 +22,9 @@ jobs:
             python3 backend/manage.py makemigrations
             python3 backend/manage.py migrate
             python3 backend/manage.py test backend
+            cd front
+            npm install
+            npm test
       - store_artifacts:
           path: test-reports/
           destination: python_app

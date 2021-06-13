@@ -17,7 +17,7 @@ test('Test properties setting', () => {
 });
 
 
-test('Test properties setting', () => {
+test('Test click event uses `action` property', () => {
     let x = false
     const dummyAction = () => {
         x = true
